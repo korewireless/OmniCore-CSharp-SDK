@@ -63,9 +63,9 @@ namespace OmniCore.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string subscriptionId = null;
-            //NewRegistry registry = null;
+            //CreateRegistryRequest registry = null;
             //var response = instance.CreateRegistry(subscriptionId, registry);
-            //Assert.IsType<DeviceRegistry>(response);
+            //Assert.IsType<CreateRegistry200Response>(response);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace OmniCore.Test.Api
             //int? pageNumber = null;
             //int? pageSize = null;
             //var response = instance.GetRegistries(subscriptionId, pageNumber, pageSize);
-            //Assert.IsType<ListDeviceRegistriesResponse>(response);
+            //Assert.IsType<ListDeviceRegistries>(response);
         }
 
         /// <summary>
@@ -118,9 +118,9 @@ namespace OmniCore.Test.Api
             //string subscriptionId = null;
             //string registryId = null;
             //string updateMask = null;
-            //UpdateRegistry registry = null;
+            //UpdateRegistryRequest registry = null;
             //var response = instance.UpdateRegistry(subscriptionId, registryId, updateMask, registry);
-            //Assert.IsType<DeviceRegistry>(response);
+            //Assert.IsType<CreateRegistry200Response>(response);
         }
     }
 }

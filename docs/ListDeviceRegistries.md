@@ -1,4 +1,4 @@
-# OmniCore.Model.ListDeviceRegistriesResponse
+# OmniCore.Model.ListDeviceRegistries
 
 ## Properties
 

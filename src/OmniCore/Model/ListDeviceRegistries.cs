@@ -27,29 +27,29 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// ListDeviceRegistriesResponse
+    /// ListDeviceRegistries
     /// </summary>
-    [DataContract(Name = "ListDeviceRegistriesResponse")]
-    public partial class ListDeviceRegistriesResponse : IEquatable<ListDeviceRegistriesResponse>, IValidatableObject
+    [DataContract(Name = "ListDeviceRegistries")]
+    public partial class ListDeviceRegistries : IEquatable<ListDeviceRegistries>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListDeviceRegistriesResponse" /> class.
+        /// Initializes a new instance of the <see cref="ListDeviceRegistries" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ListDeviceRegistriesResponse() { }
+        protected ListDeviceRegistries() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListDeviceRegistriesResponse" /> class.
+        /// Initializes a new instance of the <see cref="ListDeviceRegistries" /> class.
         /// </summary>
         /// <param name="deviceRegistries">deviceRegistries (required).</param>
         /// <param name="pageNumber">pageNumber.</param>
         /// <param name="pageSize">pageSize.</param>
         /// <param name="totalCount">totalCount.</param>
-        public ListDeviceRegistriesResponse(List<DeviceRegistry> deviceRegistries = default(List<DeviceRegistry>), int pageNumber = default(int), int pageSize = default(int), int totalCount = default(int))
+        public ListDeviceRegistries(List<DeviceRegistry> deviceRegistries = default(List<DeviceRegistry>), int pageNumber = default(int), int pageSize = default(int), int totalCount = default(int))
         {
             // to ensure "deviceRegistries" is required (not null)
             if (deviceRegistries == null)
             {
-                throw new ArgumentNullException("deviceRegistries is a required property for ListDeviceRegistriesResponse and cannot be null");
+                throw new ArgumentNullException("deviceRegistries is a required property for ListDeviceRegistries and cannot be null");
             }
             this.DeviceRegistries = deviceRegistries;
             this.PageNumber = pageNumber;
@@ -88,7 +88,7 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListDeviceRegistriesResponse {\n");
+            sb.Append("class ListDeviceRegistries {\n");
             sb.Append("  DeviceRegistries: ").Append(DeviceRegistries).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
@@ -113,15 +113,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListDeviceRegistriesResponse);
+            return this.Equals(input as ListDeviceRegistries);
         }
 
         /// <summary>
-        /// Returns true if ListDeviceRegistriesResponse instances are equal
+        /// Returns true if ListDeviceRegistries instances are equal
         /// </summary>
-        /// <param name="input">Instance of ListDeviceRegistriesResponse to be compared</param>
+        /// <param name="input">Instance of ListDeviceRegistries to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListDeviceRegistriesResponse input)
+        public bool Equals(ListDeviceRegistries input)
         {
             if (input == null)
             {

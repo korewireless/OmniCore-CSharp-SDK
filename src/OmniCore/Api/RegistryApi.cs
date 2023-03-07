@@ -35,10 +35,10 @@ namespace OmniCore.Api
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DeviceRegistry</returns>
-        DeviceRegistry CreateRegistry(string subscriptionId, NewRegistry registry, int operationIndex = 0);
+        /// <returns>CreateRegistry200Response</returns>
+        CreateRegistry200Response CreateRegistry(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -48,10 +48,10 @@ namespace OmniCore.Api
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DeviceRegistry</returns>
-        ApiResponse<DeviceRegistry> CreateRegistryWithHttpInfo(string subscriptionId, NewRegistry registry, int operationIndex = 0);
+        /// <returns>ApiResponse of CreateRegistry200Response</returns>
+        ApiResponse<CreateRegistry200Response> CreateRegistryWithHttpInfo(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -88,8 +88,8 @@ namespace OmniCore.Api
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListDeviceRegistriesResponse</returns>
-        ListDeviceRegistriesResponse GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        /// <returns>ListDeviceRegistries</returns>
+        ListDeviceRegistries GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -102,8 +102,8 @@ namespace OmniCore.Api
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListDeviceRegistriesResponse</returns>
-        ApiResponse<ListDeviceRegistriesResponse> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        /// <returns>ApiResponse of ListDeviceRegistries</returns>
+        ApiResponse<ListDeviceRegistries> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -139,10 +139,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DeviceRegistry</returns>
-        DeviceRegistry UpdateRegistry(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0);
+        /// <returns>CreateRegistry200Response</returns>
+        CreateRegistry200Response UpdateRegistry(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -154,10 +154,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DeviceRegistry</returns>
-        ApiResponse<DeviceRegistry> UpdateRegistryWithHttpInfo(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0);
+        /// <returns>ApiResponse of CreateRegistry200Response</returns>
+        ApiResponse<CreateRegistry200Response> UpdateRegistryWithHttpInfo(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -175,11 +175,11 @@ namespace OmniCore.Api
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DeviceRegistry</returns>
-        System.Threading.Tasks.Task<DeviceRegistry> CreateRegistryAsync(string subscriptionId, NewRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CreateRegistry200Response</returns>
+        System.Threading.Tasks.Task<CreateRegistry200Response> CreateRegistryAsync(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -189,11 +189,11 @@ namespace OmniCore.Api
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DeviceRegistry)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceRegistry>> CreateRegistryWithHttpInfoAsync(string subscriptionId, NewRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CreateRegistry200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateRegistry200Response>> CreateRegistryWithHttpInfoAsync(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -233,8 +233,8 @@ namespace OmniCore.Api
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListDeviceRegistriesResponse</returns>
-        System.Threading.Tasks.Task<ListDeviceRegistriesResponse> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ListDeviceRegistries</returns>
+        System.Threading.Tasks.Task<ListDeviceRegistries> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -248,8 +248,8 @@ namespace OmniCore.Api
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListDeviceRegistriesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListDeviceRegistriesResponse>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ListDeviceRegistries)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListDeviceRegistries>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -287,11 +287,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DeviceRegistry</returns>
-        System.Threading.Tasks.Task<DeviceRegistry> UpdateRegistryAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of CreateRegistry200Response</returns>
+        System.Threading.Tasks.Task<CreateRegistry200Response> UpdateRegistryAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -303,11 +303,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DeviceRegistry)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceRegistry>> UpdateRegistryWithHttpInfoAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (CreateRegistry200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateRegistry200Response>> UpdateRegistryWithHttpInfoAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -433,12 +433,12 @@ namespace OmniCore.Api
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DeviceRegistry</returns>
-        public DeviceRegistry CreateRegistry(string subscriptionId, NewRegistry registry, int operationIndex = 0)
+        /// <returns>CreateRegistry200Response</returns>
+        public CreateRegistry200Response CreateRegistry(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<DeviceRegistry> localVarResponse = CreateRegistryWithHttpInfo(subscriptionId, registry);
+            OmniCore.Client.ApiResponse<CreateRegistry200Response> localVarResponse = CreateRegistryWithHttpInfo(subscriptionId, registry);
             return localVarResponse.Data;
         }
 
@@ -447,21 +447,15 @@ namespace OmniCore.Api
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DeviceRegistry</returns>
-        public OmniCore.Client.ApiResponse<DeviceRegistry> CreateRegistryWithHttpInfo(string subscriptionId, NewRegistry registry, int operationIndex = 0)
+        /// <returns>ApiResponse of CreateRegistry200Response</returns>
+        public OmniCore.Client.ApiResponse<CreateRegistry200Response> CreateRegistryWithHttpInfo(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionId' when calling RegistryApi->CreateRegistry");
-            }
-
-            // verify the required parameter 'registry' is set
-            if (registry == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registry' when calling RegistryApi->CreateRegistry");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -501,7 +495,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DeviceRegistry>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateRegistry200Response>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateRegistry", localVarResponse);
@@ -519,13 +513,13 @@ namespace OmniCore.Api
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DeviceRegistry</returns>
-        public async System.Threading.Tasks.Task<DeviceRegistry> CreateRegistryAsync(string subscriptionId, NewRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CreateRegistry200Response</returns>
+        public async System.Threading.Tasks.Task<CreateRegistry200Response> CreateRegistryAsync(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<DeviceRegistry> localVarResponse = await CreateRegistryWithHttpInfoAsync(subscriptionId, registry, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<CreateRegistry200Response> localVarResponse = await CreateRegistryWithHttpInfoAsync(subscriptionId, registry, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -534,22 +528,16 @@ namespace OmniCore.Api
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DeviceRegistry)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<DeviceRegistry>> CreateRegistryWithHttpInfoAsync(string subscriptionId, NewRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CreateRegistry200Response)</returns>
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<CreateRegistry200Response>> CreateRegistryWithHttpInfoAsync(string subscriptionId, CreateRegistryRequest registry = default(CreateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionId' when calling RegistryApi->CreateRegistry");
-            }
-
-            // verify the required parameter 'registry' is set
-            if (registry == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registry' when calling RegistryApi->CreateRegistry");
             }
 
 
@@ -590,7 +578,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateRegistry200Response>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -786,10 +774,10 @@ namespace OmniCore.Api
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListDeviceRegistriesResponse</returns>
-        public ListDeviceRegistriesResponse GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        /// <returns>ListDeviceRegistries</returns>
+        public ListDeviceRegistries GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<ListDeviceRegistriesResponse> localVarResponse = GetRegistriesWithHttpInfo(subscriptionId, pageNumber, pageSize);
+            OmniCore.Client.ApiResponse<ListDeviceRegistries> localVarResponse = GetRegistriesWithHttpInfo(subscriptionId, pageNumber, pageSize);
             return localVarResponse.Data;
         }
 
@@ -801,8 +789,8 @@ namespace OmniCore.Api
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListDeviceRegistriesResponse</returns>
-        public OmniCore.Client.ApiResponse<ListDeviceRegistriesResponse> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        /// <returns>ApiResponse of ListDeviceRegistries</returns>
+        public OmniCore.Client.ApiResponse<ListDeviceRegistries> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -853,7 +841,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListDeviceRegistriesResponse>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListDeviceRegistries>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegistries", localVarResponse);
@@ -875,10 +863,10 @@ namespace OmniCore.Api
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListDeviceRegistriesResponse</returns>
-        public async System.Threading.Tasks.Task<ListDeviceRegistriesResponse> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ListDeviceRegistries</returns>
+        public async System.Threading.Tasks.Task<ListDeviceRegistries> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<ListDeviceRegistriesResponse> localVarResponse = await GetRegistriesWithHttpInfoAsync(subscriptionId, pageNumber, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<ListDeviceRegistries> localVarResponse = await GetRegistriesWithHttpInfoAsync(subscriptionId, pageNumber, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -891,8 +879,8 @@ namespace OmniCore.Api
         /// <param name="pageSize">Page Size (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListDeviceRegistriesResponse)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDeviceRegistriesResponse>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ListDeviceRegistries)</returns>
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDeviceRegistries>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -944,7 +932,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceRegistriesResponse>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceRegistries>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1139,12 +1127,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>DeviceRegistry</returns>
-        public DeviceRegistry UpdateRegistry(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0)
+        /// <returns>CreateRegistry200Response</returns>
+        public CreateRegistry200Response UpdateRegistry(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<DeviceRegistry> localVarResponse = UpdateRegistryWithHttpInfo(subscriptionId, registryId, updateMask, registry);
+            OmniCore.Client.ApiResponse<CreateRegistry200Response> localVarResponse = UpdateRegistryWithHttpInfo(subscriptionId, registryId, updateMask, registry);
             return localVarResponse.Data;
         }
 
@@ -1155,10 +1143,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of DeviceRegistry</returns>
-        public OmniCore.Client.ApiResponse<DeviceRegistry> UpdateRegistryWithHttpInfo(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0)
+        /// <returns>ApiResponse of CreateRegistry200Response</returns>
+        public OmniCore.Client.ApiResponse<CreateRegistry200Response> UpdateRegistryWithHttpInfo(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1176,12 +1164,6 @@ namespace OmniCore.Api
             if (updateMask == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'updateMask' when calling RegistryApi->UpdateRegistry");
-            }
-
-            // verify the required parameter 'registry' is set
-            if (registry == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registry' when calling RegistryApi->UpdateRegistry");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -1223,7 +1205,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<CreateRegistry200Response>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateRegistry", localVarResponse);
@@ -1243,13 +1225,13 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DeviceRegistry</returns>
-        public async System.Threading.Tasks.Task<DeviceRegistry> UpdateRegistryAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of CreateRegistry200Response</returns>
+        public async System.Threading.Tasks.Task<CreateRegistry200Response> UpdateRegistryAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<DeviceRegistry> localVarResponse = await UpdateRegistryWithHttpInfoAsync(subscriptionId, registryId, updateMask, registry, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<CreateRegistry200Response> localVarResponse = await UpdateRegistryWithHttpInfoAsync(subscriptionId, registryId, updateMask, registry, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1260,11 +1242,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
-        /// <param name="registry">application/json</param>
+        /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DeviceRegistry)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<DeviceRegistry>> UpdateRegistryWithHttpInfoAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistry registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (CreateRegistry200Response)</returns>
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<CreateRegistry200Response>> UpdateRegistryWithHttpInfoAsync(string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = default(UpdateRegistryRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1282,12 +1264,6 @@ namespace OmniCore.Api
             if (updateMask == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'updateMask' when calling RegistryApi->UpdateRegistry");
-            }
-
-            // verify the required parameter 'registry' is set
-            if (registry == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registry' when calling RegistryApi->UpdateRegistry");
             }
 
 
@@ -1330,7 +1306,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<CreateRegistry200Response>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

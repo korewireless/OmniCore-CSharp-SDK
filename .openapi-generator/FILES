@@ -7,6 +7,8 @@ docs/BindRequest.md
 docs/BindRequestIdsGateway.md
 docs/BlockCommunicationBody.md
 docs/CreateNewDevice.md
+docs/CreateRegistry200Response.md
+docs/CreateRegistryRequest.md
 docs/Device.md
 docs/DeviceApi.md
 docs/DeviceCertificate.md
@@ -24,7 +26,7 @@ docs/GenericErrorResponse.md
 docs/HttpConfig.md
 docs/Info.md
 docs/ListDeviceConfigVersionsResponse.md
-docs/ListDeviceRegistriesResponse.md
+docs/ListDeviceRegistries.md
 docs/ListDeviceStatesResponse.md
 docs/ListDevicesResponse.md
 docs/LogLevel.md
@@ -38,6 +40,7 @@ docs/RegistryCertificate.md
 docs/RegistryCredential.md
 docs/UpdateDevice.md
 docs/UpdateRegistry.md
+docs/UpdateRegistryRequest.md
 docs/X509CertificateDetails.md
 git_push.sh
 src/OmniCore.Test/Api/DeviceApiTests.cs
@@ -46,6 +49,8 @@ src/OmniCore.Test/Model/BindRequestIdsGatewayTests.cs
 src/OmniCore.Test/Model/BindRequestTests.cs
 src/OmniCore.Test/Model/BlockCommunicationBodyTests.cs
 src/OmniCore.Test/Model/CreateNewDeviceTests.cs
+src/OmniCore.Test/Model/CreateRegistry200ResponseTests.cs
+src/OmniCore.Test/Model/CreateRegistryRequestTests.cs
 src/OmniCore.Test/Model/DeviceCertificateTests.cs
 src/OmniCore.Test/Model/DeviceCommandTests.cs
 src/OmniCore.Test/Model/DeviceConfigTests.cs
@@ -62,7 +67,7 @@ src/OmniCore.Test/Model/GenericErrorResponseTests.cs
 src/OmniCore.Test/Model/HttpConfigTests.cs
 src/OmniCore.Test/Model/InfoTests.cs
 src/OmniCore.Test/Model/ListDeviceConfigVersionsResponseTests.cs
-src/OmniCore.Test/Model/ListDeviceRegistriesResponseTests.cs
+src/OmniCore.Test/Model/ListDeviceRegistriesTests.cs
 src/OmniCore.Test/Model/ListDeviceStatesResponseTests.cs
 src/OmniCore.Test/Model/ListDevicesResponseTests.cs
 src/OmniCore.Test/Model/LogLevelTests.cs
@@ -74,6 +79,7 @@ src/OmniCore.Test/Model/PublicKeyCredentialTests.cs
 src/OmniCore.Test/Model/RegistryCertificateTests.cs
 src/OmniCore.Test/Model/RegistryCredentialTests.cs
 src/OmniCore.Test/Model/UpdateDeviceTests.cs
+src/OmniCore.Test/Model/UpdateRegistryRequestTests.cs
 src/OmniCore.Test/Model/UpdateRegistryTests.cs
 src/OmniCore.Test/Model/X509CertificateDetailsTests.cs
 src/OmniCore.Test/OmniCore.Test.csproj
@@ -100,6 +106,8 @@ src/OmniCore/Model/BindRequest.cs
 src/OmniCore/Model/BindRequestIdsGateway.cs
 src/OmniCore/Model/BlockCommunicationBody.cs
 src/OmniCore/Model/CreateNewDevice.cs
+src/OmniCore/Model/CreateRegistry200Response.cs
+src/OmniCore/Model/CreateRegistryRequest.cs
 src/OmniCore/Model/Device.cs
 src/OmniCore/Model/DeviceCertificate.cs
 src/OmniCore/Model/DeviceCommand.cs
@@ -116,7 +124,7 @@ src/OmniCore/Model/GenericErrorResponse.cs
 src/OmniCore/Model/HttpConfig.cs
 src/OmniCore/Model/Info.cs
 src/OmniCore/Model/ListDeviceConfigVersionsResponse.cs
-src/OmniCore/Model/ListDeviceRegistriesResponse.cs
+src/OmniCore/Model/ListDeviceRegistries.cs
 src/OmniCore/Model/ListDeviceStatesResponse.cs
 src/OmniCore/Model/ListDevicesResponse.cs
 src/OmniCore/Model/LogLevel.cs
@@ -129,5 +137,6 @@ src/OmniCore/Model/RegistryCertificate.cs
 src/OmniCore/Model/RegistryCredential.cs
 src/OmniCore/Model/UpdateDevice.cs
 src/OmniCore/Model/UpdateRegistry.cs
+src/OmniCore/Model/UpdateRegistryRequest.cs
 src/OmniCore/Model/X509CertificateDetails.cs
 src/OmniCore/OmniCore.csproj
