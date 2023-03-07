@@ -27,10 +27,10 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// NewDevice
+    /// CreateNewDevice
     /// </summary>
-    [DataContract(Name = "NewDevice")]
-    public partial class NewDevice : IEquatable<NewDevice>, IValidatableObject
+    [DataContract(Name = "CreateNewDevice")]
+    public partial class CreateNewDevice : IEquatable<CreateNewDevice>, IValidatableObject
     {
 
         /// <summary>
@@ -39,12 +39,12 @@ namespace OmniCore.Model
         [DataMember(Name = "logLevel", EmitDefaultValue = false)]
         public LogLevel? LogLevel { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="NewDevice" /> class.
+        /// Initializes a new instance of the <see cref="CreateNewDevice" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected NewDevice() { }
+        protected CreateNewDevice() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="NewDevice" /> class.
+        /// Initializes a new instance of the <see cref="CreateNewDevice" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="blocked">blocked.</param>
@@ -53,12 +53,12 @@ namespace OmniCore.Model
         /// <param name="config">config.</param>
         /// <param name="logLevel">logLevel.</param>
         /// <param name="metadata">metadata.</param>
-        public NewDevice(string id = default(string), bool blocked = default(bool), List<DeviceCredential> credentials = default(List<DeviceCredential>), GatewayConfig gatewayConfig = default(GatewayConfig), DeviceConfig config = default(DeviceConfig), LogLevel? logLevel = default(LogLevel?), Dictionary<string, string> metadata = default(Dictionary<string, string>))
+        public CreateNewDevice(string id = default(string), bool blocked = default(bool), List<DeviceCredential> credentials = default(List<DeviceCredential>), GatewayConfig gatewayConfig = default(GatewayConfig), DeviceConfig config = default(DeviceConfig), LogLevel? logLevel = default(LogLevel?), Dictionary<string, string> metadata = default(Dictionary<string, string>))
         {
             // to ensure "id" is required (not null)
             if (id == null)
             {
-                throw new ArgumentNullException("id is a required property for NewDevice and cannot be null");
+                throw new ArgumentNullException("id is a required property for CreateNewDevice and cannot be null");
             }
             this.Id = id;
             this.Blocked = blocked;
@@ -112,7 +112,7 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class NewDevice {\n");
+            sb.Append("class CreateNewDevice {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Blocked: ").Append(Blocked).Append("\n");
             sb.Append("  Credentials: ").Append(Credentials).Append("\n");
@@ -140,15 +140,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NewDevice);
+            return this.Equals(input as CreateNewDevice);
         }
 
         /// <summary>
-        /// Returns true if NewDevice instances are equal
+        /// Returns true if CreateNewDevice instances are equal
         /// </summary>
-        /// <param name="input">Instance of NewDevice to be compared</param>
+        /// <param name="input">Instance of CreateNewDevice to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NewDevice input)
+        public bool Equals(CreateNewDevice input)
         {
             if (input == null)
             {

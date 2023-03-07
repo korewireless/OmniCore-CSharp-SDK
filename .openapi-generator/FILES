@@ -6,6 +6,7 @@ appveyor.yml
 docs/BindRequest.md
 docs/BindRequestIdsGateway.md
 docs/BlockCommunicationBody.md
+docs/CreateNewDevice.md
 docs/Device.md
 docs/DeviceApi.md
 docs/DeviceCertificate.md
@@ -28,7 +29,6 @@ docs/ListDeviceStatesResponse.md
 docs/ListDevicesResponse.md
 docs/LogLevel.md
 docs/MqttConfig.md
-docs/NewDevice.md
 docs/NewRegistry.md
 docs/NotificationConfig.md
 docs/PublicKeyCertificate.md
@@ -45,6 +45,7 @@ src/OmniCore.Test/Api/RegistryApiTests.cs
 src/OmniCore.Test/Model/BindRequestIdsGatewayTests.cs
 src/OmniCore.Test/Model/BindRequestTests.cs
 src/OmniCore.Test/Model/BlockCommunicationBodyTests.cs
+src/OmniCore.Test/Model/CreateNewDeviceTests.cs
 src/OmniCore.Test/Model/DeviceCertificateTests.cs
 src/OmniCore.Test/Model/DeviceCommandTests.cs
 src/OmniCore.Test/Model/DeviceConfigTests.cs
@@ -66,7 +67,6 @@ src/OmniCore.Test/Model/ListDeviceStatesResponseTests.cs
 src/OmniCore.Test/Model/ListDevicesResponseTests.cs
 src/OmniCore.Test/Model/LogLevelTests.cs
 src/OmniCore.Test/Model/MqttConfigTests.cs
-src/OmniCore.Test/Model/NewDeviceTests.cs
 src/OmniCore.Test/Model/NewRegistryTests.cs
 src/OmniCore.Test/Model/NotificationConfigTests.cs
 src/OmniCore.Test/Model/PublicKeyCertificateTests.cs
@@ -99,6 +99,7 @@ src/OmniCore/Model/AbstractOpenAPISchema.cs
 src/OmniCore/Model/BindRequest.cs
 src/OmniCore/Model/BindRequestIdsGateway.cs
 src/OmniCore/Model/BlockCommunicationBody.cs
+src/OmniCore/Model/CreateNewDevice.cs
 src/OmniCore/Model/Device.cs
 src/OmniCore/Model/DeviceCertificate.cs
 src/OmniCore/Model/DeviceCommand.cs
@@ -120,7 +121,6 @@ src/OmniCore/Model/ListDeviceStatesResponse.cs
 src/OmniCore/Model/ListDevicesResponse.cs
 src/OmniCore/Model/LogLevel.cs
 src/OmniCore/Model/MqttConfig.cs
-src/OmniCore/Model/NewDevice.cs
 src/OmniCore/Model/NewRegistry.cs
 src/OmniCore/Model/NotificationConfig.cs
 src/OmniCore/Model/PublicKeyCertificate.cs

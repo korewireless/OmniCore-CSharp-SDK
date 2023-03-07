@@ -1,4 +1,4 @@
-# OmniCore.Model.NewDevice
+# OmniCore.Model.CreateNewDevice
 
 ## Properties
 

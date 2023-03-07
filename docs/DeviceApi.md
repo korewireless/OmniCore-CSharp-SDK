@@ -14,9 +14,9 @@ All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model
 | [**GetDevices**](DeviceApi.md#getdevices) | **GET** /subscriptions/{subscriptionId}/registries/{registryId}/devices |  |
 | [**GetStates**](DeviceApi.md#getstates) | **GET** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states |  |
 | [**SendCommandToDevice**](DeviceApi.md#sendcommandtodevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice |  |
-| [**SendConfigurationToDevice**](DeviceApi.md#sendconfigurationtodevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendConfigurationToDevice |  |
 | [**UnBindDevice**](DeviceApi.md#unbinddevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway |  |
 | [**UnBindDevices**](DeviceApi.md#unbinddevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway |  |
+| [**UpdateConfigurationToDevice**](DeviceApi.md#updateconfigurationtodevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice |  |
 | [**UpdateDevice**](DeviceApi.md#updatedevice) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} |  |
 
 <a name="binddevice"></a>
@@ -320,7 +320,7 @@ catch (ApiException e)
 
 <a name="createdevice"></a>
 # **CreateDevice**
-> Device CreateDevice (string subscriptionId, string registryId, NewDevice device)
+> Device CreateDevice (string subscriptionId, string registryId, CreateNewDevice device)
 
 
 
@@ -348,7 +348,7 @@ namespace Example
             var apiInstance = new DeviceApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var device = new NewDevice(); // NewDevice | application/json
+            var device = new CreateNewDevice(); // CreateNewDevice | application/json
 
             try
             {
@@ -391,7 +391,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **device** | [**NewDevice**](NewDevice.md) | application/json |  |
+| **device** | [**CreateNewDevice**](CreateNewDevice.md) | application/json |  |
 
 ### Return type
 
@@ -1031,107 +1031,6 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sendconfigurationtodevice"></a>
-# **SendConfigurationToDevice**
-> DeviceConfig SendConfigurationToDevice (string subscriptionid, string registryId, string deviceId, DeviceConfiguration device)
-
-
-
-Send A Config To A Device
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using OmniCore.Api;
-using OmniCore.Client;
-using OmniCore.Model;
-
-namespace Example
-{
-    public class SendConfigurationToDeviceExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new DeviceApi(config);
-            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
-            var registryId = "registryId_example";  // string | Registry ID
-            var deviceId = "deviceId_example";  // string | Device ID
-            var device = new DeviceConfiguration(); // DeviceConfiguration | application/json
-
-            try
-            {
-                DeviceConfig result = apiInstance.SendConfigurationToDevice(subscriptionid, registryId, deviceId, device);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DeviceApi.SendConfigurationToDevice: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SendConfigurationToDeviceWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    ApiResponse<DeviceConfig> response = apiInstance.SendConfigurationToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, device);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DeviceApi.SendConfigurationToDeviceWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **subscriptionid** | **string** | Subscription ID |  |
-| **registryId** | **string** | Registry ID |  |
-| **deviceId** | **string** | Device ID |  |
-| **device** | [**DeviceConfiguration**](DeviceConfiguration.md) | application/json |  |
-
-### Return type
-
-[**DeviceConfig**](DeviceConfig.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Internal Server Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="unbinddevice"></a>
 # **UnBindDevice**
 > Info UnBindDevice (string subscriptionId, string registryId, BindRequest device)
@@ -1309,6 +1208,107 @@ catch (ApiException e)
 ### Return type
 
 [**Info**](Info.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updateconfigurationtodevice"></a>
+# **UpdateConfigurationToDevice**
+> DeviceConfig UpdateConfigurationToDevice (string subscriptionid, string registryId, string deviceId, DeviceConfiguration device)
+
+
+
+Update A Configuration Of A Device
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class UpdateConfigurationToDeviceExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DeviceApi(config);
+            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
+            var registryId = "registryId_example";  // string | Registry ID
+            var deviceId = "deviceId_example";  // string | Device ID
+            var device = new DeviceConfiguration(); // DeviceConfiguration | application/json
+
+            try
+            {
+                DeviceConfig result = apiInstance.UpdateConfigurationToDevice(subscriptionid, registryId, deviceId, device);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DeviceApi.UpdateConfigurationToDevice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateConfigurationToDeviceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<DeviceConfig> response = apiInstance.UpdateConfigurationToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, device);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DeviceApi.UpdateConfigurationToDeviceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionid** | **string** | Subscription ID |  |
+| **registryId** | **string** | Registry ID |  |
+| **deviceId** | **string** | Device ID |  |
+| **device** | [**DeviceConfiguration**](DeviceConfiguration.md) | application/json |  |
+
+### Return type
+
+[**DeviceConfig**](DeviceConfig.md)
 
 ### Authorization
 
