@@ -273,14 +273,6 @@ namespace OmniCore.Test.Model
         {
             // TODO unit test for the property 'State'
         }
-        /// <summary>
-        /// Test the property 'Subscriptions'
-        /// </summary>
-        [Fact]
-        public void SubscriptionsTest()
-        {
-            // TODO unit test for the property 'Subscriptions'
-        }
 
     }
 

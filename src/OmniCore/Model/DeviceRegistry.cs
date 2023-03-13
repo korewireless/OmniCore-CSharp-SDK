@@ -47,10 +47,6 @@ namespace OmniCore.Model
         /// Initializes a new instance of the <see cref="DeviceRegistry" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="name">name.</param>
-        /// <param name="parent">parent (required).</param>
-        /// <param name="createdOn">createdOn.</param>
-        /// <param name="updatedOn">updatedOn.</param>
         /// <param name="credentials">credentials.</param>
         /// <param name="httpConfig">httpConfig.</param>
         /// <param name="mqttConfig">mqttConfig.</param>
@@ -58,9 +54,7 @@ namespace OmniCore.Model
         /// <param name="eventNotificationConfigs">eventNotificationConfigs.</param>
         /// <param name="logNotificationConfig">logNotificationConfig.</param>
         /// <param name="stateNotificationConfig">stateNotificationConfig.</param>
-        /// <param name="numberOfDevices">numberOfDevices.</param>
-        /// <param name="numberOfGateways">numberOfGateways.</param>
-        public DeviceRegistry(string id = default(string), string name = default(string), string parent = default(string), string createdOn = default(string), string updatedOn = default(string), List<RegistryCredential> credentials = default(List<RegistryCredential>), HttpConfig httpConfig = default(HttpConfig), MqttConfig mqttConfig = default(MqttConfig), LogLevel? logLevel = default(LogLevel?), List<EventNotificationConfig> eventNotificationConfigs = default(List<EventNotificationConfig>), NotificationConfig logNotificationConfig = default(NotificationConfig), NotificationConfig stateNotificationConfig = default(NotificationConfig), int numberOfDevices = default(int), int numberOfGateways = default(int))
+        public DeviceRegistry(string id = default(string), List<RegistryCredential> credentials = default(List<RegistryCredential>), HttpConfig httpConfig = default(HttpConfig), MqttConfig mqttConfig = default(MqttConfig), LogLevel? logLevel = default(LogLevel?), List<EventNotificationConfig> eventNotificationConfigs = default(List<EventNotificationConfig>), NotificationConfig logNotificationConfig = default(NotificationConfig), NotificationConfig stateNotificationConfig = default(NotificationConfig))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -68,15 +62,6 @@ namespace OmniCore.Model
                 throw new ArgumentNullException("id is a required property for DeviceRegistry and cannot be null");
             }
             this.Id = id;
-            // to ensure "parent" is required (not null)
-            if (parent == null)
-            {
-                throw new ArgumentNullException("parent is a required property for DeviceRegistry and cannot be null");
-            }
-            this.Parent = parent;
-            this.Name = name;
-            this.CreatedOn = createdOn;
-            this.UpdatedOn = updatedOn;
             this.Credentials = credentials;
             this.HttpConfig = httpConfig;
             this.MqttConfig = mqttConfig;
@@ -84,8 +69,6 @@ namespace OmniCore.Model
             this.EventNotificationConfigs = eventNotificationConfigs;
             this.LogNotificationConfig = logNotificationConfig;
             this.StateNotificationConfig = stateNotificationConfig;
-            this.NumberOfDevices = numberOfDevices;
-            this.NumberOfGateways = numberOfGateways;
         }
 
         /// <summary>
@@ -98,26 +81,58 @@ namespace OmniCore.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
+        /// <summary>
+        /// Returns false as Name should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeName()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Parent
         /// </summary>
-        [DataMember(Name = "parent", IsRequired = true, EmitDefaultValue = true)]
-        public string Parent { get; set; }
+        [DataMember(Name = "parent", EmitDefaultValue = false)]
+        public string Parent { get; private set; }
 
+        /// <summary>
+        /// Returns false as Parent should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeParent()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name = "createdOn", EmitDefaultValue = false)]
-        public string CreatedOn { get; set; }
+        public string CreatedOn { get; private set; }
 
+        /// <summary>
+        /// Returns false as CreatedOn should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCreatedOn()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets UpdatedOn
         /// </summary>
         [DataMember(Name = "updatedOn", EmitDefaultValue = false)]
-        public string UpdatedOn { get; set; }
+        public string UpdatedOn { get; private set; }
 
+        /// <summary>
+        /// Returns false as UpdatedOn should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeUpdatedOn()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Credentials
         /// </summary>
@@ -158,14 +173,30 @@ namespace OmniCore.Model
         /// Gets or Sets NumberOfDevices
         /// </summary>
         [DataMember(Name = "numberOfDevices", EmitDefaultValue = false)]
-        public int NumberOfDevices { get; set; }
+        public int NumberOfDevices { get; private set; }
 
+        /// <summary>
+        /// Returns false as NumberOfDevices should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeNumberOfDevices()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets NumberOfGateways
         /// </summary>
         [DataMember(Name = "numberOfGateways", EmitDefaultValue = false)]
-        public int NumberOfGateways { get; set; }
+        public int NumberOfGateways { get; private set; }
 
+        /// <summary>
+        /// Returns false as NumberOfGateways should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeNumberOfGateways()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>

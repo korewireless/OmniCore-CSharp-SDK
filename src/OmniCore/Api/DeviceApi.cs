@@ -122,7 +122,7 @@ namespace OmniCore.Api
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
-        Device CreateDevice(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0);
+        Device CreateDevice(string subscriptionId, string registryId, Device device, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -136,7 +136,7 @@ namespace OmniCore.Api
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> CreateDeviceWithHttpInfo(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0);
+        ApiResponse<Device> CreateDeviceWithHttpInfo(string subscriptionId, string registryId, Device device, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -412,11 +412,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
-        Device UpdateDevice(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0);
+        Device UpdateDevice(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -428,11 +428,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> UpdateDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0);
+        ApiResponse<Device> UpdateDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -544,7 +544,7 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> CreateDeviceAsync(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Device> CreateDeviceAsync(string subscriptionId, string registryId, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -559,7 +559,7 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> CreateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Device>> CreateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -853,12 +853,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> UpdateDeviceAsync(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Device> UpdateDeviceAsync(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -870,12 +870,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> UpdateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Device>> UpdateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -1605,7 +1605,7 @@ namespace OmniCore.Api
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
-        public Device CreateDevice(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0)
+        public Device CreateDevice(string subscriptionId, string registryId, Device device, int operationIndex = 0)
         {
             OmniCore.Client.ApiResponse<Device> localVarResponse = CreateDeviceWithHttpInfo(subscriptionId, registryId, device);
             return localVarResponse.Data;
@@ -1620,7 +1620,7 @@ namespace OmniCore.Api
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
-        public OmniCore.Client.ApiResponse<Device> CreateDeviceWithHttpInfo(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Device> CreateDeviceWithHttpInfo(string subscriptionId, string registryId, Device device, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1701,7 +1701,7 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> CreateDeviceAsync(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Device> CreateDeviceAsync(string subscriptionId, string registryId, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             OmniCore.Client.ApiResponse<Device> localVarResponse = await CreateDeviceWithHttpInfoAsync(subscriptionId, registryId, device, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1717,7 +1717,7 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Device>> CreateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, CreateNewDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Device>> CreateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -3665,11 +3665,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
-        public Device UpdateDevice(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0)
+        public Device UpdateDevice(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0)
         {
             OmniCore.Client.ApiResponse<Device> localVarResponse = UpdateDeviceWithHttpInfo(subscriptionId, registryId, deviceId, updateMask, device);
             return localVarResponse.Data;
@@ -3682,11 +3682,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
-        public OmniCore.Client.ApiResponse<Device> UpdateDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Device> UpdateDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -3778,12 +3778,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> UpdateDeviceAsync(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Device> UpdateDeviceAsync(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             OmniCore.Client.ApiResponse<Device> localVarResponse = await UpdateDeviceWithHttpInfoAsync(subscriptionId, registryId, deviceId, updateMask, device, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3796,12 +3796,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,log_level, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Device>> UpdateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, string updateMask, UpdateDevice device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Device>> UpdateDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, string updateMask, Device device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)

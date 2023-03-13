@@ -107,7 +107,7 @@ namespace OmniCore.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string subscriptionId = null;
             //string registryId = null;
-            //CreateNewDevice device = null;
+            //Device device = null;
             //var response = instance.CreateDevice(subscriptionId, registryId, device);
             //Assert.IsType<Device>(response);
         }
@@ -260,7 +260,7 @@ namespace OmniCore.Test.Api
             //string registryId = null;
             //string deviceId = null;
             //string updateMask = null;
-            //UpdateDevice device = null;
+            //Device device = null;
             //var response = instance.UpdateDevice(subscriptionId, registryId, deviceId, updateMask, device);
             //Assert.IsType<Device>(response);
         }

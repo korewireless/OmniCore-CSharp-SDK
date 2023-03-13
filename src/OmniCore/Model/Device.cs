@@ -47,34 +47,17 @@ namespace OmniCore.Model
         /// Initializes a new instance of the <see cref="Device" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="name">name.</param>
-        /// <param name="numId">numId.</param>
-        /// <param name="parent">parent (required).</param>
-        /// <param name="registry">registry (required).</param>
         /// <param name="blocked">blocked.</param>
-        /// <param name="capresent">capresent.</param>
-        /// <param name="subscription">subscription (required).</param>
-        /// <param name="createdOn">createdOn.</param>
-        /// <param name="updatedOn">updatedOn.</param>
         /// <param name="credentials">credentials.</param>
         /// <param name="gateway">gateway.</param>
         /// <param name="gatewayConfig">gatewayConfig.</param>
         /// <param name="isGateway">isGateway.</param>
-        /// <param name="deviceErrors">deviceErrors.</param>
-        /// <param name="clientOnline">clientOnline.</param>
-        /// <param name="lastConfigAckTime">lastConfigAckTime.</param>
-        /// <param name="lastConfigSendTime">lastConfigSendTime.</param>
         /// <param name="lastErrorStatus">lastErrorStatus.</param>
-        /// <param name="lastErrorTime">lastErrorTime.</param>
-        /// <param name="lastEventTime">lastEventTime.</param>
-        /// <param name="lastHeartbeatTime">lastHeartbeatTime.</param>
-        /// <param name="lastStateTime">lastStateTime.</param>
         /// <param name="logLevel">logLevel.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="config">config.</param>
         /// <param name="state">state.</param>
-        /// <param name="subscriptions">subscriptions.</param>
-        public Device(string id = default(string), string name = default(string), string numId = default(string), string parent = default(string), string registry = default(string), bool blocked = default(bool), bool capresent = default(bool), string subscription = default(string), string createdOn = default(string), string updatedOn = default(string), List<DeviceCredential> credentials = default(List<DeviceCredential>), List<string> gateway = default(List<string>), GatewayConfig gatewayConfig = default(GatewayConfig), bool isGateway = default(bool), string deviceErrors = default(string), bool clientOnline = default(bool), string lastConfigAckTime = default(string), string lastConfigSendTime = default(string), ErrorStatus lastErrorStatus = default(ErrorStatus), string lastErrorTime = default(string), string lastEventTime = default(string), string lastHeartbeatTime = default(string), string lastStateTime = default(string), LogLevel? logLevel = default(LogLevel?), Dictionary<string, string> metadata = default(Dictionary<string, string>), DeviceConfig config = default(DeviceConfig), DeviceState state = default(DeviceState), List<string> subscriptions = default(List<string>))
+        public Device(string id = default(string), bool blocked = default(bool), List<DeviceCredential> credentials = default(List<DeviceCredential>), List<string> gateway = default(List<string>), GatewayConfig gatewayConfig = default(GatewayConfig), bool isGateway = default(bool), ErrorStatus lastErrorStatus = default(ErrorStatus), LogLevel? logLevel = default(LogLevel?), Dictionary<string, string> metadata = default(Dictionary<string, string>), DeviceConfig config = default(DeviceConfig), DeviceState state = default(DeviceState))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -82,48 +65,16 @@ namespace OmniCore.Model
                 throw new ArgumentNullException("id is a required property for Device and cannot be null");
             }
             this.Id = id;
-            // to ensure "parent" is required (not null)
-            if (parent == null)
-            {
-                throw new ArgumentNullException("parent is a required property for Device and cannot be null");
-            }
-            this.Parent = parent;
-            // to ensure "registry" is required (not null)
-            if (registry == null)
-            {
-                throw new ArgumentNullException("registry is a required property for Device and cannot be null");
-            }
-            this.Registry = registry;
-            // to ensure "subscription" is required (not null)
-            if (subscription == null)
-            {
-                throw new ArgumentNullException("subscription is a required property for Device and cannot be null");
-            }
-            this.Subscription = subscription;
-            this.Name = name;
-            this.NumId = numId;
             this.Blocked = blocked;
-            this.Capresent = capresent;
-            this.CreatedOn = createdOn;
-            this.UpdatedOn = updatedOn;
             this.Credentials = credentials;
             this.Gateway = gateway;
             this.GatewayConfig = gatewayConfig;
             this.IsGateway = isGateway;
-            this.DeviceErrors = deviceErrors;
-            this.ClientOnline = clientOnline;
-            this.LastConfigAckTime = lastConfigAckTime;
-            this.LastConfigSendTime = lastConfigSendTime;
             this.LastErrorStatus = lastErrorStatus;
-            this.LastErrorTime = lastErrorTime;
-            this.LastEventTime = lastEventTime;
-            this.LastHeartbeatTime = lastHeartbeatTime;
-            this.LastStateTime = lastStateTime;
             this.LogLevel = logLevel;
             this.Metadata = metadata;
             this.Config = config;
             this.State = state;
-            this.Subscriptions = subscriptions;
         }
 
         /// <summary>
@@ -136,26 +87,58 @@ namespace OmniCore.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
+        /// <summary>
+        /// Returns false as Name should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeName()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets NumId
         /// </summary>
         [DataMember(Name = "numId", EmitDefaultValue = false)]
-        public string NumId { get; set; }
+        public string NumId { get; private set; }
 
+        /// <summary>
+        /// Returns false as NumId should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeNumId()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Parent
         /// </summary>
-        [DataMember(Name = "parent", IsRequired = true, EmitDefaultValue = true)]
-        public string Parent { get; set; }
+        [DataMember(Name = "parent", EmitDefaultValue = false)]
+        public string Parent { get; private set; }
 
+        /// <summary>
+        /// Returns false as Parent should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeParent()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Registry
         /// </summary>
-        [DataMember(Name = "registry", IsRequired = true, EmitDefaultValue = true)]
-        public string Registry { get; set; }
+        [DataMember(Name = "registry", EmitDefaultValue = false)]
+        public string Registry { get; private set; }
 
+        /// <summary>
+        /// Returns false as Registry should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeRegistry()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Blocked
         /// </summary>
@@ -166,26 +149,58 @@ namespace OmniCore.Model
         /// Gets or Sets Capresent
         /// </summary>
         [DataMember(Name = "capresent", EmitDefaultValue = true)]
-        public bool Capresent { get; set; }
+        public bool Capresent { get; private set; }
 
+        /// <summary>
+        /// Returns false as Capresent should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCapresent()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Subscription
         /// </summary>
-        [DataMember(Name = "subscription", IsRequired = true, EmitDefaultValue = true)]
-        public string Subscription { get; set; }
+        [DataMember(Name = "subscription", EmitDefaultValue = false)]
+        public string Subscription { get; private set; }
 
+        /// <summary>
+        /// Returns false as Subscription should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeSubscription()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets CreatedOn
         /// </summary>
         [DataMember(Name = "createdOn", EmitDefaultValue = false)]
-        public string CreatedOn { get; set; }
+        public string CreatedOn { get; private set; }
 
+        /// <summary>
+        /// Returns false as CreatedOn should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCreatedOn()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets UpdatedOn
         /// </summary>
         [DataMember(Name = "updatedOn", EmitDefaultValue = false)]
-        public string UpdatedOn { get; set; }
+        public string UpdatedOn { get; private set; }
 
+        /// <summary>
+        /// Returns false as UpdatedOn should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeUpdatedOn()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Credentials
         /// </summary>
@@ -214,26 +229,58 @@ namespace OmniCore.Model
         /// Gets or Sets DeviceErrors
         /// </summary>
         [DataMember(Name = "deviceErrors", EmitDefaultValue = false)]
-        public string DeviceErrors { get; set; }
+        public string DeviceErrors { get; private set; }
 
+        /// <summary>
+        /// Returns false as DeviceErrors should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeDeviceErrors()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets ClientOnline
         /// </summary>
         [DataMember(Name = "clientOnline", EmitDefaultValue = true)]
-        public bool ClientOnline { get; set; }
+        public bool ClientOnline { get; private set; }
 
+        /// <summary>
+        /// Returns false as ClientOnline should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeClientOnline()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets LastConfigAckTime
         /// </summary>
         [DataMember(Name = "lastConfigAckTime", EmitDefaultValue = false)]
-        public string LastConfigAckTime { get; set; }
+        public string LastConfigAckTime { get; private set; }
 
+        /// <summary>
+        /// Returns false as LastConfigAckTime should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLastConfigAckTime()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets LastConfigSendTime
         /// </summary>
         [DataMember(Name = "lastConfigSendTime", EmitDefaultValue = false)]
-        public string LastConfigSendTime { get; set; }
+        public string LastConfigSendTime { get; private set; }
 
+        /// <summary>
+        /// Returns false as LastConfigSendTime should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLastConfigSendTime()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets LastErrorStatus
         /// </summary>
@@ -244,26 +291,58 @@ namespace OmniCore.Model
         /// Gets or Sets LastErrorTime
         /// </summary>
         [DataMember(Name = "lastErrorTime", EmitDefaultValue = false)]
-        public string LastErrorTime { get; set; }
+        public string LastErrorTime { get; private set; }
 
+        /// <summary>
+        /// Returns false as LastErrorTime should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLastErrorTime()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets LastEventTime
         /// </summary>
         [DataMember(Name = "lastEventTime", EmitDefaultValue = false)]
-        public string LastEventTime { get; set; }
+        public string LastEventTime { get; private set; }
 
+        /// <summary>
+        /// Returns false as LastEventTime should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLastEventTime()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets LastHeartbeatTime
         /// </summary>
         [DataMember(Name = "lastHeartbeatTime", EmitDefaultValue = false)]
-        public string LastHeartbeatTime { get; set; }
+        public string LastHeartbeatTime { get; private set; }
 
+        /// <summary>
+        /// Returns false as LastHeartbeatTime should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLastHeartbeatTime()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets LastStateTime
         /// </summary>
         [DataMember(Name = "lastStateTime", EmitDefaultValue = false)]
-        public string LastStateTime { get; set; }
+        public string LastStateTime { get; private set; }
 
+        /// <summary>
+        /// Returns false as LastStateTime should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeLastStateTime()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
@@ -281,12 +360,6 @@ namespace OmniCore.Model
         /// </summary>
         [DataMember(Name = "state", EmitDefaultValue = false)]
         public DeviceState State { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Subscriptions
-        /// </summary>
-        [DataMember(Name = "subscriptions", EmitDefaultValue = false)]
-        public List<string> Subscriptions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -323,7 +396,6 @@ namespace OmniCore.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Config: ").Append(Config).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  Subscriptions: ").Append(Subscriptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -491,12 +563,6 @@ namespace OmniCore.Model
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
-                ) && 
-                (
-                    this.Subscriptions == input.Subscriptions ||
-                    this.Subscriptions != null &&
-                    input.Subscriptions != null &&
-                    this.Subscriptions.SequenceEqual(input.Subscriptions)
                 );
         }
 
@@ -601,10 +667,6 @@ namespace OmniCore.Model
                 if (this.State != null)
                 {
                     hashCode = (hashCode * 59) + this.State.GetHashCode();
-                }
-                if (this.Subscriptions != null)
-                {
-                    hashCode = (hashCode * 59) + this.Subscriptions.GetHashCode();
                 }
                 return hashCode;
             }

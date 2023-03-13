@@ -12,7 +12,7 @@ All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model
 
 <a name="createregistry"></a>
 # **CreateRegistry**
-> CreateRegistry200Response CreateRegistry (string subscriptionId, CreateRegistryRequest registry = null)
+> DeviceRegistry CreateRegistry (string subscriptionId, DeviceRegistry registry = null)
 
 
 
@@ -39,11 +39,11 @@ namespace Example
 
             var apiInstance = new RegistryApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
-            var registry = new CreateRegistryRequest(); // CreateRegistryRequest | application/json (optional) 
+            var registry = new DeviceRegistry(); // DeviceRegistry | application/json (optional) 
 
             try
             {
-                CreateRegistry200Response result = apiInstance.CreateRegistry(subscriptionId, registry);
+                DeviceRegistry result = apiInstance.CreateRegistry(subscriptionId, registry);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<CreateRegistry200Response> response = apiInstance.CreateRegistryWithHttpInfo(subscriptionId, registry);
+    ApiResponse<DeviceRegistry> response = apiInstance.CreateRegistryWithHttpInfo(subscriptionId, registry);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,11 +81,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
-| **registry** | [**CreateRegistryRequest**](CreateRegistryRequest.md) | application/json | [optional]  |
+| **registry** | [**DeviceRegistry**](DeviceRegistry.md) | application/json | [optional]  |
 
 ### Return type
 
-[**CreateRegistry200Response**](CreateRegistry200Response.md)
+[**DeviceRegistry**](DeviceRegistry.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ catch (ApiException e)
 
 <a name="updateregistry"></a>
 # **UpdateRegistry**
-> CreateRegistry200Response UpdateRegistry (string subscriptionId, string registryId, string updateMask, UpdateRegistryRequest registry = null)
+> DeviceRegistry UpdateRegistry (string subscriptionId, string registryId, string updateMask, DeviceRegistry registry = null)
 
 
 
@@ -431,11 +431,11 @@ namespace Example
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var updateMask = "eventNotificationConfigs";  // string | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
-            var registry = new UpdateRegistryRequest(); // UpdateRegistryRequest | application/json (optional) 
+            var registry = new DeviceRegistry(); // DeviceRegistry | application/json (optional) 
 
             try
             {
-                CreateRegistry200Response result = apiInstance.UpdateRegistry(subscriptionId, registryId, updateMask, registry);
+                DeviceRegistry result = apiInstance.UpdateRegistry(subscriptionId, registryId, updateMask, registry);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -455,7 +455,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<CreateRegistry200Response> response = apiInstance.UpdateRegistryWithHttpInfo(subscriptionId, registryId, updateMask, registry);
+    ApiResponse<DeviceRegistry> response = apiInstance.UpdateRegistryWithHttpInfo(subscriptionId, registryId, updateMask, registry);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -475,11 +475,11 @@ catch (ApiException e)
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **updateMask** | **string** | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials |  |
-| **registry** | [**UpdateRegistryRequest**](UpdateRegistryRequest.md) | application/json | [optional]  |
+| **registry** | [**DeviceRegistry**](DeviceRegistry.md) | application/json | [optional]  |
 
 ### Return type
 
-[**CreateRegistry200Response**](CreateRegistry200Response.md)
+[**DeviceRegistry**](DeviceRegistry.md)
 
 ### Authorization
 
