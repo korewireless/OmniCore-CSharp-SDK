@@ -74,6 +74,10 @@ namespace Example
 
             Configuration config = new Configuration();
             config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            // Configure API key authorization: apiKey
+            config.ApiKey.Add("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.ApiKeyPrefix.Add("x-api-key", "Bearer");
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -167,4 +171,11 @@ Class | Method | HTTP request | Description
 ### bearerAuth
 
 - **Type**: Bearer Authentication
+
+<a name="apiKey"></a>
+### apiKey
+
+- **Type**: API key
+- **API key parameter name**: x-api-key
+- **Location**: HTTP header
 

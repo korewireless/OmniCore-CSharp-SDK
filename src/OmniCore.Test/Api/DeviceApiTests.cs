@@ -207,21 +207,6 @@ namespace OmniCore.Test.Api
         }
 
         /// <summary>
-        /// Test SendConfigurationToDevice
-        /// </summary>
-        [Fact]
-        public void SendConfigurationToDeviceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string subscriptionid = null;
-            //string registryId = null;
-            //string deviceId = null;
-            //DeviceConfiguration device = null;
-            //var response = instance.SendConfigurationToDevice(subscriptionid, registryId, deviceId, device);
-            //Assert.IsType<DeviceConfig>(response);
-        }
-
-        /// <summary>
         /// Test UnBindDevice
         /// </summary>
         [Fact]
@@ -247,6 +232,21 @@ namespace OmniCore.Test.Api
             //BindRequestIdsGateway device = null;
             //var response = instance.UnBindDevices(subscriptionId, registryId, device);
             //Assert.IsType<Info>(response);
+        }
+
+        /// <summary>
+        /// Test UpdateConfigurationToDevice
+        /// </summary>
+        [Fact]
+        public void UpdateConfigurationToDeviceTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string subscriptionid = null;
+            //string registryId = null;
+            //string deviceId = null;
+            //DeviceConfiguration device = null;
+            //var response = instance.UpdateConfigurationToDevice(subscriptionid, registryId, deviceId, device);
+            //Assert.IsType<DeviceConfig>(response);
         }
 
         /// <summary>
