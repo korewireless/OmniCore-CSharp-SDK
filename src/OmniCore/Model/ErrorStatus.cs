@@ -35,34 +35,53 @@ namespace OmniCore.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorStatus" /> class.
         /// </summary>
-        /// <param name="code">code.</param>
-        /// <param name="details">details.</param>
-        /// <param name="message">message.</param>
-        public ErrorStatus(int code = default(int), string details = default(string), string message = default(string))
+        [JsonConstructorAttribute]
+        public ErrorStatus()
         {
-            this.Code = code;
-            this.Details = details;
-            this.Message = message;
         }
 
         /// <summary>
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name = "code", EmitDefaultValue = false)]
-        public int Code { get; set; }
+        public int Code { get; private set; }
 
+        /// <summary>
+        /// Returns false as Code should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeCode()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Details
         /// </summary>
         [DataMember(Name = "details", EmitDefaultValue = false)]
-        public string Details { get; set; }
+        public string Details { get; private set; }
 
+        /// <summary>
+        /// Returns false as Details should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeDetails()
+        {
+            return false;
+        }
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name = "message", EmitDefaultValue = false)]
-        public string Message { get; set; }
+        public string Message { get; private set; }
 
+        /// <summary>
+        /// Returns false as Message should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeMessage()
+        {
+            return false;
+        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
