@@ -116,9 +116,9 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**GetDevices**](docs/DeviceApi.md#getdevices) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices | 
 *DeviceApi* | [**GetStates**](docs/DeviceApi.md#getstates) | **GET** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states | 
 *DeviceApi* | [**SendCommandToDevice**](docs/DeviceApi.md#sendcommandtodevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice | 
-*DeviceApi* | [**SendConfigurationToDevice**](docs/DeviceApi.md#sendconfigurationtodevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendConfigurationToDevice | 
 *DeviceApi* | [**UnBindDevice**](docs/DeviceApi.md#unbinddevice) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 *DeviceApi* | [**UnBindDevices**](docs/DeviceApi.md#unbinddevices) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
+*DeviceApi* | [**UpdateConfigurationToDevice**](docs/DeviceApi.md#updateconfigurationtodevice) | **POST** /model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
 *DeviceApi* | [**UpdateDevice**](docs/DeviceApi.md#updatedevice) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 *RegistryApi* | [**CreateRegistry**](docs/RegistryApi.md#createregistry) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries | 
 *RegistryApi* | [**DeleteRegistry**](docs/RegistryApi.md#deleteregistry) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} | 
