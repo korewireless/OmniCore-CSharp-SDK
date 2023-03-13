@@ -7,7 +7,6 @@ docs/BindRequestIdsGateway.md
 docs/BlockCommunicationBody.md
 docs/Device.md
 docs/DeviceApi.md
-docs/DeviceCertificate.md
 docs/DeviceCommand.md
 docs/DeviceConfig.md
 docs/DeviceConfiguration.md
@@ -31,7 +30,6 @@ docs/NotificationConfig.md
 docs/PublicKeyCertificate.md
 docs/PublicKeyCredential.md
 docs/RegistryApi.md
-docs/RegistryCertificate.md
 docs/RegistryCredential.md
 docs/X509CertificateDetails.md
 git_push.sh
@@ -59,7 +57,6 @@ src/OmniCore/Model/BindRequest.cs
 src/OmniCore/Model/BindRequestIdsGateway.cs
 src/OmniCore/Model/BlockCommunicationBody.cs
 src/OmniCore/Model/Device.cs
-src/OmniCore/Model/DeviceCertificate.cs
 src/OmniCore/Model/DeviceCommand.cs
 src/OmniCore/Model/DeviceConfig.cs
 src/OmniCore/Model/DeviceConfiguration.cs
@@ -82,7 +79,6 @@ src/OmniCore/Model/MqttConfig.cs
 src/OmniCore/Model/NotificationConfig.cs
 src/OmniCore/Model/PublicKeyCertificate.cs
 src/OmniCore/Model/PublicKeyCredential.cs
-src/OmniCore/Model/RegistryCertificate.cs
 src/OmniCore/Model/RegistryCredential.cs
 src/OmniCore/Model/X509CertificateDetails.cs
 src/OmniCore/OmniCore.csproj

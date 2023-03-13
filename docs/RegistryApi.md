@@ -1,14 +1,14 @@
 # OmniCore.Api.RegistryApi
 
-All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com/model-state-management*
+All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateRegistry**](RegistryApi.md#createregistry) | **POST** /subscriptions/{subscriptionId}/registries |  |
-| [**DeleteRegistry**](RegistryApi.md#deleteregistry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} |  |
-| [**GetRegistries**](RegistryApi.md#getregistries) | **GET** /subscriptions/{subscriptionId}/registries |  |
-| [**GetRegistry**](RegistryApi.md#getregistry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} |  |
-| [**UpdateRegistry**](RegistryApi.md#updateregistry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} |  |
+| [**CreateRegistry**](RegistryApi.md#createregistry) | **POST** /model-state-management/subscriptions/{subscriptionId}/registries |  |
+| [**DeleteRegistry**](RegistryApi.md#deleteregistry) | **DELETE** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} |  |
+| [**GetRegistries**](RegistryApi.md#getregistries) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries |  |
+| [**GetRegistry**](RegistryApi.md#getregistry) | **GET** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} |  |
+| [**UpdateRegistry**](RegistryApi.md#updateregistry) | **PATCH** /model-state-management/subscriptions/{subscriptionId}/registries/{registryId} |  |
 
 <a name="createregistry"></a>
 # **CreateRegistry**
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
+            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -130,7 +130,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
+            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -227,7 +227,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
+            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -326,7 +326,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
+            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -423,7 +423,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com/model-state-management";
+            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

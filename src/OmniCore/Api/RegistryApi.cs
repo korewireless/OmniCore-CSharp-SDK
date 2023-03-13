@@ -495,7 +495,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DeviceRegistry>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateRegistry", localVarResponse);
@@ -578,7 +578,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -664,7 +664,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Info>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteRegistry", localVarResponse);
@@ -752,7 +752,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -841,7 +841,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListDeviceRegistries>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListDeviceRegistries>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegistries", localVarResponse);
@@ -932,7 +932,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceRegistries>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceRegistries>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1018,7 +1018,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegistry", localVarResponse);
@@ -1106,7 +1106,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1205,7 +1205,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateRegistry", localVarResponse);
@@ -1306,7 +1306,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
