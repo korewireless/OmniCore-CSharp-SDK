@@ -73,7 +73,7 @@ namespace Example
         {
 
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            config.BasePath = "https://api.omnicore.korewireless.com";
             // Configure API key authorization: apiKey
             config.ApiKey.Add("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -106,7 +106,7 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com*
+All URIs are relative to *https://api.omnicore.korewireless.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,6 @@
 # OmniCore.Api.RegistryApi
 
-All URIs are relative to *https://demo-api.omnicore.cloud.korewireless.com*
+All URIs are relative to *https://api.omnicore.korewireless.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            config.BasePath = "https://api.omnicore.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -134,7 +134,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            config.BasePath = "https://api.omnicore.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -235,7 +235,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            config.BasePath = "https://api.omnicore.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -338,7 +338,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            config.BasePath = "https://api.omnicore.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -439,7 +439,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://demo-api.omnicore.cloud.korewireless.com";
+            config.BasePath = "https://api.omnicore.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
