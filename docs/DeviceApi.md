@@ -538,7 +538,7 @@ catch (ApiException e)
 
 <a name="getconfig"></a>
 # **GetConfig**
-> ListDeviceConfigVersionsResponse GetConfig (string subscriptionid, string registryId, string deviceId, int numVersions)
+> ListDeviceConfigVersionsResponse GetConfig (string subscriptionid, string registryId, string deviceId, int? numVersions = null)
 
 
 
@@ -571,7 +571,7 @@ namespace Example
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
-            var numVersions = 56;  // int | Device ID
+            var numVersions = 56;  // int? | The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional) 
 
             try
             {
@@ -615,7 +615,7 @@ catch (ApiException e)
 | **subscriptionid** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
-| **numVersions** | **int** | Device ID |  |
+| **numVersions** | **int?** | The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. | [optional]  |
 
 ### Return type
 
@@ -1417,7 +1417,7 @@ namespace Example
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
-            var updateMask = "logLevel";  // string | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata
+            var updateMask = "logLevel";  // string | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata
             var device = new Device(); // Device | application/json
 
             try
@@ -1462,7 +1462,7 @@ catch (ApiException e)
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
-| **updateMask** | **string** | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata |  |
+| **updateMask** | **string** | Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata |  |
 | **device** | [**Device**](Device.md) | application/json |  |
 
 ### Return type

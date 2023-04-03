@@ -27,12 +27,14 @@ docs/ListDevicesResponse.md
 docs/LogLevel.md
 docs/MqttConfig.md
 docs/NotificationConfig.md
+docs/Policy.md
 docs/PublicKeyCertificate.md
 docs/PublicKeyCredential.md
 docs/RegistryApi.md
 docs/RegistryCredential.md
 docs/X509CertificateDetails.md
 git_push.sh
+src/OmniCore.Test/Model/PolicyTests.cs
 src/OmniCore.Test/OmniCore.Test.csproj
 src/OmniCore/Api/DeviceApi.cs
 src/OmniCore/Api/RegistryApi.cs
@@ -77,6 +79,7 @@ src/OmniCore/Model/ListDevicesResponse.cs
 src/OmniCore/Model/LogLevel.cs
 src/OmniCore/Model/MqttConfig.cs
 src/OmniCore/Model/NotificationConfig.cs
+src/OmniCore/Model/Policy.cs
 src/OmniCore/Model/PublicKeyCertificate.cs
 src/OmniCore/Model/PublicKeyCredential.cs
 src/OmniCore/Model/RegistryCredential.cs

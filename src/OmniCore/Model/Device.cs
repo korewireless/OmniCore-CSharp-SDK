@@ -57,7 +57,8 @@ namespace OmniCore.Model
         /// <param name="metadata">metadata.</param>
         /// <param name="config">config.</param>
         /// <param name="state">state.</param>
-        public Device(string id = default(string), bool blocked = default(bool), List<DeviceCredential> credentials = default(List<DeviceCredential>), List<string> gateway = default(List<string>), GatewayConfig gatewayConfig = default(GatewayConfig), bool isGateway = default(bool), ErrorStatus lastErrorStatus = default(ErrorStatus), LogLevel? logLevel = default(LogLevel?), Dictionary<string, string> metadata = default(Dictionary<string, string>), DeviceConfig config = default(DeviceConfig), DeviceState state = default(DeviceState))
+        /// <param name="policy">policy.</param>
+        public Device(string id = default(string), bool blocked = default(bool), List<DeviceCredential> credentials = default(List<DeviceCredential>), List<string> gateway = default(List<string>), GatewayConfig gatewayConfig = default(GatewayConfig), bool isGateway = default(bool), ErrorStatus lastErrorStatus = default(ErrorStatus), LogLevel? logLevel = default(LogLevel?), Dictionary<string, string> metadata = default(Dictionary<string, string>), DeviceConfig config = default(DeviceConfig), DeviceState state = default(DeviceState), Policy policy = default(Policy))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -75,6 +76,7 @@ namespace OmniCore.Model
             this.Metadata = metadata;
             this.Config = config;
             this.State = state;
+            this.Policy = policy;
         }
 
         /// <summary>
@@ -362,6 +364,12 @@ namespace OmniCore.Model
         public DeviceState State { get; set; }
 
         /// <summary>
+        /// Gets or Sets Policy
+        /// </summary>
+        [DataMember(Name = "policy", EmitDefaultValue = false)]
+        public Policy Policy { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -396,6 +404,7 @@ namespace OmniCore.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Config: ").Append(Config).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
+            sb.Append("  Policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -563,6 +572,11 @@ namespace OmniCore.Model
                     this.State == input.State ||
                     (this.State != null &&
                     this.State.Equals(input.State))
+                ) && 
+                (
+                    this.Policy == input.Policy ||
+                    (this.Policy != null &&
+                    this.Policy.Equals(input.Policy))
                 );
         }
 
@@ -667,6 +681,10 @@ namespace OmniCore.Model
                 if (this.State != null)
                 {
                     hashCode = (hashCode * 59) + this.State.GetHashCode();
+                }
+                if (this.Policy != null)
+                {
+                    hashCode = (hashCode * 59) + this.Policy.GetHashCode();
                 }
                 return hashCode;
             }

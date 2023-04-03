@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
  - [Model.LogLevel](docs/LogLevel.md)
  - [Model.MqttConfig](docs/MqttConfig.md)
  - [Model.NotificationConfig](docs/NotificationConfig.md)
+ - [Model.Policy](docs/Policy.md)
  - [Model.PublicKeyCertificate](docs/PublicKeyCertificate.md)
  - [Model.PublicKeyCredential](docs/PublicKeyCredential.md)
  - [Model.RegistryCredential](docs/RegistryCredential.md)

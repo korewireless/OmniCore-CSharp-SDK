@@ -174,10 +174,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListDeviceConfigVersionsResponse</returns>
-        ListDeviceConfigVersionsResponse GetConfig(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0);
+        ListDeviceConfigVersionsResponse GetConfig(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -189,10 +189,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListDeviceConfigVersionsResponse</returns>
-        ApiResponse<ListDeviceConfigVersionsResponse> GetConfigWithHttpInfo(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0);
+        ApiResponse<ListDeviceConfigVersionsResponse> GetConfigWithHttpInfo(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -412,7 +412,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
@@ -428,7 +428,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
@@ -599,11 +599,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListDeviceConfigVersionsResponse</returns>
-        System.Threading.Tasks.Task<ListDeviceConfigVersionsResponse> GetConfigAsync(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListDeviceConfigVersionsResponse> GetConfigAsync(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -615,11 +615,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListDeviceConfigVersionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListDeviceConfigVersionsResponse>> GetConfigWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListDeviceConfigVersionsResponse>> GetConfigWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -853,7 +853,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -870,7 +870,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2039,10 +2039,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListDeviceConfigVersionsResponse</returns>
-        public ListDeviceConfigVersionsResponse GetConfig(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0)
+        public ListDeviceConfigVersionsResponse GetConfig(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0)
         {
             OmniCore.Client.ApiResponse<ListDeviceConfigVersionsResponse> localVarResponse = GetConfigWithHttpInfo(subscriptionid, registryId, deviceId, numVersions);
             return localVarResponse.Data;
@@ -2055,10 +2055,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListDeviceConfigVersionsResponse</returns>
-        public OmniCore.Client.ApiResponse<ListDeviceConfigVersionsResponse> GetConfigWithHttpInfo(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<ListDeviceConfigVersionsResponse> GetConfigWithHttpInfo(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -2103,7 +2103,10 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "numVersions", numVersions));
+            if (numVersions != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "numVersions", numVersions));
+            }
 
             localVarRequestOptions.Operation = "DeviceApi.GetConfig";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2141,11 +2144,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListDeviceConfigVersionsResponse</returns>
-        public async System.Threading.Tasks.Task<ListDeviceConfigVersionsResponse> GetConfigAsync(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListDeviceConfigVersionsResponse> GetConfigAsync(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             OmniCore.Client.ApiResponse<ListDeviceConfigVersionsResponse> localVarResponse = await GetConfigWithHttpInfoAsync(subscriptionid, registryId, deviceId, numVersions, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2158,11 +2161,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="numVersions">Device ID</param>
+        /// <param name="numVersions">The number of versions to list. Versions are listed in decreasing order of the version number. The maximum number of versions retained is 10. If this value is zero, it will return all the versions available. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListDeviceConfigVersionsResponse)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDeviceConfigVersionsResponse>> GetConfigWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, int numVersions, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDeviceConfigVersionsResponse>> GetConfigWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, int? numVersions = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -2208,7 +2211,10 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "numVersions", numVersions));
+            if (numVersions != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "numVersions", numVersions));
+            }
 
             localVarRequestOptions.Operation = "DeviceApi.GetConfig";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3795,7 +3801,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
@@ -3812,7 +3818,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
@@ -3913,7 +3919,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -3931,7 +3937,7 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked, and metadata</param>
+        /// <param name="updateMask">Required. Only updates the device fields indicated by this mask. The field mask must not be empty, and it must not contain fields that are immutable or only set by the server. Mutable top-level fields: credentials,logLevel, blocked,policy and metadata</param>
         /// <param name="device">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
