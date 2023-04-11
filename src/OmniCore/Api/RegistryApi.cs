@@ -87,9 +87,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListDeviceRegistries</returns>
-        ListDeviceRegistries GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        ListDeviceRegistries GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -101,9 +102,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListDeviceRegistries</returns>
-        ApiResponse<ListDeviceRegistries> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0);
+        ApiResponse<ListDeviceRegistries> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -129,6 +131,33 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceRegistry</returns>
         ApiResponse<DeviceRegistry> GetRegistryWithHttpInfo(string subscriptionId, string registryId, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Send  Broadcast To Devices
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Object</returns>
+        Object SendBroadcastToDevices(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Send  Broadcast To Devices
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> SendBroadcastToDevicesWithHttpInfo(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -231,10 +260,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListDeviceRegistries</returns>
-        System.Threading.Tasks.Task<ListDeviceRegistries> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListDeviceRegistries> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -246,10 +276,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListDeviceRegistries)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListDeviceRegistries>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListDeviceRegistries>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -277,6 +308,35 @@ namespace OmniCore.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceRegistry)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeviceRegistry>> GetRegistryWithHttpInfoAsync(string subscriptionId, string registryId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Send  Broadcast To Devices
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> SendBroadcastToDevicesAsync(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Send  Broadcast To Devices
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SendBroadcastToDevicesWithHttpInfoAsync(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -500,7 +560,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DeviceRegistry>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateRegistry", localVarResponse);
@@ -588,7 +648,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -679,7 +739,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Info>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteRegistry", localVarResponse);
@@ -772,7 +832,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -793,11 +853,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListDeviceRegistries</returns>
-        public ListDeviceRegistries GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        public ListDeviceRegistries GetRegistries(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<ListDeviceRegistries> localVarResponse = GetRegistriesWithHttpInfo(subscriptionId, pageNumber, pageSize);
+            OmniCore.Client.ApiResponse<ListDeviceRegistries> localVarResponse = GetRegistriesWithHttpInfo(subscriptionId, pageNumber, pageSize, registryIds);
             return localVarResponse.Data;
         }
 
@@ -808,9 +869,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListDeviceRegistries</returns>
-        public OmniCore.Client.ApiResponse<ListDeviceRegistries> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<ListDeviceRegistries> GetRegistriesWithHttpInfo(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -849,6 +911,10 @@ namespace OmniCore.Api
             {
                 localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
+            if (registryIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("csv", "registryIds", registryIds));
+            }
 
             localVarRequestOptions.Operation = "RegistryApi.GetRegistries";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -866,7 +932,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListDeviceRegistries>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListDeviceRegistries>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegistries", localVarResponse);
@@ -886,12 +952,13 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListDeviceRegistries</returns>
-        public async System.Threading.Tasks.Task<ListDeviceRegistries> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListDeviceRegistries> GetRegistriesAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<ListDeviceRegistries> localVarResponse = await GetRegistriesWithHttpInfoAsync(subscriptionId, pageNumber, pageSize, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<ListDeviceRegistries> localVarResponse = await GetRegistriesWithHttpInfoAsync(subscriptionId, pageNumber, pageSize, registryIds, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -902,10 +969,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">Page Size (optional)</param>
+        /// <param name="registryIds">A list of registry string IDs. For example, [&#39;registry0&#39;, &#39;registry12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListDeviceRegistries)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDeviceRegistries>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDeviceRegistries>> GetRegistriesWithHttpInfoAsync(string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), List<string> registryIds = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -945,6 +1013,10 @@ namespace OmniCore.Api
             {
                 localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
+            if (registryIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("csv", "registryIds", registryIds));
+            }
 
             localVarRequestOptions.Operation = "RegistryApi.GetRegistries";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -962,7 +1034,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceRegistries>("/model-state-management/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceRegistries>("/subscriptions/{subscriptionId}/registries", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1053,7 +1125,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegistry", localVarResponse);
@@ -1146,11 +1218,215 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetRegistry", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Send  Broadcast To Devices
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Object</returns>
+        public Object SendBroadcastToDevices(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0)
+        {
+            OmniCore.Client.ApiResponse<Object> localVarResponse = SendBroadcastToDevicesWithHttpInfo(subscriptionid, registryId, registry);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Send  Broadcast To Devices
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object</returns>
+        public OmniCore.Client.ApiResponse<Object> SendBroadcastToDevicesWithHttpInfo(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0)
+        {
+            // verify the required parameter 'subscriptionid' is set
+            if (subscriptionid == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionid' when calling RegistryApi->SendBroadcastToDevices");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling RegistryApi->SendBroadcastToDevices");
+            }
+
+            // verify the required parameter 'registry' is set
+            if (registry == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registry' when calling RegistryApi->SendBroadcastToDevices");
+            }
+
+            OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = OmniCore.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = OmniCore.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
+            localVarRequestOptions.Data = registry;
+
+            localVarRequestOptions.Operation = "RegistryApi.SendBroadcastToDevices";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SendBroadcastToDevices", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Send  Broadcast To Devices
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> SendBroadcastToDevicesAsync(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            OmniCore.Client.ApiResponse<Object> localVarResponse = await SendBroadcastToDevicesWithHttpInfoAsync(subscriptionid, registryId, registry, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Send  Broadcast To Devices
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="registry">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Object>> SendBroadcastToDevicesWithHttpInfoAsync(string subscriptionid, string registryId, DeviceCommand registry, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'subscriptionid' is set
+            if (subscriptionid == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionid' when calling RegistryApi->SendBroadcastToDevices");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling RegistryApi->SendBroadcastToDevices");
+            }
+
+            // verify the required parameter 'registry' is set
+            if (registry == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registry' when calling RegistryApi->SendBroadcastToDevices");
+            }
+
+
+            OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = OmniCore.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = OmniCore.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
+            localVarRequestOptions.Data = registry;
+
+            localVarRequestOptions.Operation = "RegistryApi.SendBroadcastToDevices";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SendBroadcastToDevices", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -1250,7 +1526,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateRegistry", localVarResponse);
@@ -1356,7 +1632,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<DeviceRegistry>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<DeviceRegistry>("/subscriptions/{subscriptionId}/registries/{registryId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

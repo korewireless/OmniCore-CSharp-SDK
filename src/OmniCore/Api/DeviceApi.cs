@@ -1083,7 +1083,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BindDevice", localVarResponse);
@@ -1186,7 +1186,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/bindDeviceToGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1287,7 +1287,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BindDevices", localVarResponse);
@@ -1390,7 +1390,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/bindDevicesToGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1500,7 +1500,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("BlockDeviceCommuncation", localVarResponse);
@@ -1612,7 +1612,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/communication", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1713,7 +1713,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Device>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Device>("/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CreateDevice", localVarResponse);
@@ -1816,7 +1816,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Device>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Device>("/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1916,7 +1916,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteDevice", localVarResponse);
@@ -2018,7 +2018,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2124,7 +2124,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListDeviceConfigVersionsResponse>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListDeviceConfigVersionsResponse>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetConfig", localVarResponse);
@@ -2232,7 +2232,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceConfigVersionsResponse>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceConfigVersionsResponse>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/configVersions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2332,7 +2332,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Device>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Device>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetDevice", localVarResponse);
@@ -2434,7 +2434,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Device>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Device>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2573,7 +2573,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListDevicesResponse>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListDevicesResponse>("/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetDevices", localVarResponse);
@@ -2714,7 +2714,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDevicesResponse>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDevicesResponse>("/subscriptions/{subscriptionId}/registries/{registryId}/devices", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2820,7 +2820,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListDeviceStatesResponse>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListDeviceStatesResponse>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetStates", localVarResponse);
@@ -2928,7 +2928,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceStatesResponse>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDeviceStatesResponse>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3038,7 +3038,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Object>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SendCommandToDevice", localVarResponse);
@@ -3150,7 +3150,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3251,7 +3251,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UnBindDevice", localVarResponse);
@@ -3354,7 +3354,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3455,7 +3455,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UnBindDevices", localVarResponse);
@@ -3558,7 +3558,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3668,7 +3668,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<DeviceConfig>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<DeviceConfig>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateConfigurationToDevice", localVarResponse);
@@ -3780,7 +3780,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceConfig>("/model-state-management/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DeviceConfig>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3899,7 +3899,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Device>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<Device>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateDevice", localVarResponse);
@@ -4020,7 +4020,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Device>("/model-state-management/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<Device>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
