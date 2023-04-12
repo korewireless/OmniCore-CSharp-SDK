@@ -556,7 +556,7 @@ namespace Example
             var apiInstance = new RegistryApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var updateMask = "eventNotificationConfigs";  // string | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials
+            var updateMask = "eventNotificationConfigs";  // string | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled
             var registry = new DeviceRegistry(); // DeviceRegistry | application/json (optional) 
 
             try
@@ -600,7 +600,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **updateMask** | **string** | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials |  |
+| **updateMask** | **string** | values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled |  |
 | **registry** | [**DeviceRegistry**](DeviceRegistry.md) | application/json | [optional]  |
 
 ### Return type

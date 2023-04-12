@@ -51,6 +51,20 @@ namespace OmniCore.Model
         public string ExpirationTime { get; set; }
 
         /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; private set; }
+
+        /// <summary>
+        /// Returns false as Id should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeId()
+        {
+            return false;
+        }
+        /// <summary>
         /// Gets or Sets PublicKey
         /// </summary>
         [DataMember(Name = "publicKey", EmitDefaultValue = false)]
@@ -65,6 +79,7 @@ namespace OmniCore.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class DeviceCredential {\n");
             sb.Append("  ExpirationTime: ").Append(ExpirationTime).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  PublicKey: ").Append(PublicKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -107,6 +122,11 @@ namespace OmniCore.Model
                     this.ExpirationTime.Equals(input.ExpirationTime))
                 ) && 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
                     this.PublicKey == input.PublicKey ||
                     (this.PublicKey != null &&
                     this.PublicKey.Equals(input.PublicKey))
@@ -125,6 +145,10 @@ namespace OmniCore.Model
                 if (this.ExpirationTime != null)
                 {
                     hashCode = (hashCode * 59) + this.ExpirationTime.GetHashCode();
+                }
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 if (this.PublicKey != null)
                 {

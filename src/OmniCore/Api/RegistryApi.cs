@@ -167,7 +167,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceRegistry</returns>
@@ -182,7 +182,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceRegistry</returns>
@@ -346,7 +346,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -362,7 +362,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1442,7 +1442,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceRegistry</returns>
@@ -1458,7 +1458,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceRegistry</returns>
@@ -1545,7 +1545,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1562,7 +1562,7 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,jitrNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials</param>
+        /// <param name="updateMask">values to be updated: eventNotificationConfigs,stateNotificationConfig.pubsub_topic_name,logNotificationConfig.pubsub_topic_name,customOnboardNotificationConfig.pubsub_topic_name,mqttConfig.mqtt_enabled_state,httpConfig.http_enabled_state,logLevel,credentials,customOnboardEnabled</param>
         /// <param name="registry">application/json (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

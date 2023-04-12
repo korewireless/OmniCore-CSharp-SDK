@@ -54,8 +54,9 @@ namespace OmniCore.Model
         /// <param name="eventNotificationConfigs">eventNotificationConfigs.</param>
         /// <param name="logNotificationConfig">logNotificationConfig.</param>
         /// <param name="stateNotificationConfig">stateNotificationConfig.</param>
-        /// <param name="jitrNotificationConfig">jitrNotificationConfig.</param>
-        public DeviceRegistry(string id = default(string), List<RegistryCredential> credentials = default(List<RegistryCredential>), HttpConfig httpConfig = default(HttpConfig), MqttConfig mqttConfig = default(MqttConfig), LogLevel? logLevel = default(LogLevel?), List<EventNotificationConfig> eventNotificationConfigs = default(List<EventNotificationConfig>), NotificationConfig logNotificationConfig = default(NotificationConfig), NotificationConfig stateNotificationConfig = default(NotificationConfig), NotificationConfig jitrNotificationConfig = default(NotificationConfig))
+        /// <param name="customOnboardNotificationConfig">customOnboardNotificationConfig.</param>
+        /// <param name="customOnboardEnabled">customOnboardEnabled.</param>
+        public DeviceRegistry(string id = default(string), List<RegistryCredential> credentials = default(List<RegistryCredential>), HttpConfig httpConfig = default(HttpConfig), MqttConfig mqttConfig = default(MqttConfig), LogLevel? logLevel = default(LogLevel?), List<EventNotificationConfig> eventNotificationConfigs = default(List<EventNotificationConfig>), NotificationConfig logNotificationConfig = default(NotificationConfig), NotificationConfig stateNotificationConfig = default(NotificationConfig), NotificationConfig customOnboardNotificationConfig = default(NotificationConfig), bool customOnboardEnabled = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -70,7 +71,8 @@ namespace OmniCore.Model
             this.EventNotificationConfigs = eventNotificationConfigs;
             this.LogNotificationConfig = logNotificationConfig;
             this.StateNotificationConfig = stateNotificationConfig;
-            this.JitrNotificationConfig = jitrNotificationConfig;
+            this.CustomOnboardNotificationConfig = customOnboardNotificationConfig;
+            this.CustomOnboardEnabled = customOnboardEnabled;
         }
 
         /// <summary>
@@ -172,10 +174,16 @@ namespace OmniCore.Model
         public NotificationConfig StateNotificationConfig { get; set; }
 
         /// <summary>
-        /// Gets or Sets JitrNotificationConfig
+        /// Gets or Sets CustomOnboardNotificationConfig
         /// </summary>
-        [DataMember(Name = "jitrNotificationConfig", EmitDefaultValue = false)]
-        public NotificationConfig JitrNotificationConfig { get; set; }
+        [DataMember(Name = "customOnboardNotificationConfig", EmitDefaultValue = false)]
+        public NotificationConfig CustomOnboardNotificationConfig { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CustomOnboardEnabled
+        /// </summary>
+        [DataMember(Name = "customOnboardEnabled", EmitDefaultValue = true)]
+        public bool CustomOnboardEnabled { get; set; }
 
         /// <summary>
         /// Gets or Sets NumberOfDevices
@@ -225,7 +233,8 @@ namespace OmniCore.Model
             sb.Append("  EventNotificationConfigs: ").Append(EventNotificationConfigs).Append("\n");
             sb.Append("  LogNotificationConfig: ").Append(LogNotificationConfig).Append("\n");
             sb.Append("  StateNotificationConfig: ").Append(StateNotificationConfig).Append("\n");
-            sb.Append("  JitrNotificationConfig: ").Append(JitrNotificationConfig).Append("\n");
+            sb.Append("  CustomOnboardNotificationConfig: ").Append(CustomOnboardNotificationConfig).Append("\n");
+            sb.Append("  CustomOnboardEnabled: ").Append(CustomOnboardEnabled).Append("\n");
             sb.Append("  NumberOfDevices: ").Append(NumberOfDevices).Append("\n");
             sb.Append("  NumberOfGateways: ").Append(NumberOfGateways).Append("\n");
             sb.Append("}\n");
@@ -325,9 +334,13 @@ namespace OmniCore.Model
                     this.StateNotificationConfig.Equals(input.StateNotificationConfig))
                 ) && 
                 (
-                    this.JitrNotificationConfig == input.JitrNotificationConfig ||
-                    (this.JitrNotificationConfig != null &&
-                    this.JitrNotificationConfig.Equals(input.JitrNotificationConfig))
+                    this.CustomOnboardNotificationConfig == input.CustomOnboardNotificationConfig ||
+                    (this.CustomOnboardNotificationConfig != null &&
+                    this.CustomOnboardNotificationConfig.Equals(input.CustomOnboardNotificationConfig))
+                ) && 
+                (
+                    this.CustomOnboardEnabled == input.CustomOnboardEnabled ||
+                    this.CustomOnboardEnabled.Equals(input.CustomOnboardEnabled)
                 ) && 
                 (
                     this.NumberOfDevices == input.NumberOfDevices ||
@@ -393,10 +406,11 @@ namespace OmniCore.Model
                 {
                     hashCode = (hashCode * 59) + this.StateNotificationConfig.GetHashCode();
                 }
-                if (this.JitrNotificationConfig != null)
+                if (this.CustomOnboardNotificationConfig != null)
                 {
-                    hashCode = (hashCode * 59) + this.JitrNotificationConfig.GetHashCode();
+                    hashCode = (hashCode * 59) + this.CustomOnboardNotificationConfig.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.CustomOnboardEnabled.GetHashCode();
                 hashCode = (hashCode * 59) + this.NumberOfDevices.GetHashCode();
                 hashCode = (hashCode * 59) + this.NumberOfGateways.GetHashCode();
                 return hashCode;

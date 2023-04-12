@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **EventNotificationConfigs** | [**List&lt;EventNotificationConfig&gt;**](EventNotificationConfig.md) |  | [optional] 
 **LogNotificationConfig** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
 **StateNotificationConfig** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
-**JitrNotificationConfig** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
+**CustomOnboardNotificationConfig** | [**NotificationConfig**](NotificationConfig.md) |  | [optional] 
+**CustomOnboardEnabled** | **bool** |  | [optional] 
 **NumberOfDevices** | **int** |  | [optional] [readonly] 
 **NumberOfGateways** | **int** |  | [optional] [readonly] 
 

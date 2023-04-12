@@ -48,6 +48,20 @@ namespace OmniCore.Model
         public PublicKeyCertificate PublicKeyCertificate { get; set; }
 
         /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; private set; }
+
+        /// <summary>
+        /// Returns false as Id should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeId()
+        {
+            return false;
+        }
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -56,6 +70,7 @@ namespace OmniCore.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class RegistryCredential {\n");
             sb.Append("  PublicKeyCertificate: ").Append(PublicKeyCertificate).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,6 +110,11 @@ namespace OmniCore.Model
                     this.PublicKeyCertificate == input.PublicKeyCertificate ||
                     (this.PublicKeyCertificate != null &&
                     this.PublicKeyCertificate.Equals(input.PublicKeyCertificate))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -110,6 +130,10 @@ namespace OmniCore.Model
                 if (this.PublicKeyCertificate != null)
                 {
                     hashCode = (hashCode * 59) + this.PublicKeyCertificate.GetHashCode();
+                }
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 return hashCode;
             }
