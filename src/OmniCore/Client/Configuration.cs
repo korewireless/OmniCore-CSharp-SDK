@@ -111,7 +111,7 @@ namespace OmniCore.Client
         {
             Proxy = null;
             UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/1.0.0/csharp");
-            BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            BasePath = "https://api.korewireless.com/omnicore";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -119,13 +119,13 @@ namespace OmniCore.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://api.omnicore.korewireless.com/model-state-management"},
+                        {"url", "https://api.korewireless.com/omnicore"},
                         {"description", "Production Server"},
                     }
                 },
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://demo-api.omnicore.cloud.korewireless.com/model-state-management"},
+                        {"url", "https://demo.api.korewireless.com/omnicore"},
                         {"description", "Demo Server"},
                     }
                 }
@@ -146,7 +146,7 @@ namespace OmniCore.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://api.omnicore.korewireless.com/model-state-management") : this()
+            string basePath = "https://api.korewireless.com/omnicore") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");

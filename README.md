@@ -73,7 +73,7 @@ namespace Example
         {
 
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.ApiKey.Add("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -106,7 +106,7 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.omnicore.korewireless.com/model-state-management*
+All URIs are relative to *https://api.korewireless.com/omnicore*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**UnBindDevice**](docs/DeviceApi.md#unbinddevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway | 
 *DeviceApi* | [**UnBindDevices**](docs/DeviceApi.md#unbinddevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway | 
 *DeviceApi* | [**UpdateConfigurationToDevice**](docs/DeviceApi.md#updateconfigurationtodevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice | 
+*DeviceApi* | [**UpdateCustomOnboardRequest**](docs/DeviceApi.md#updatecustomonboardrequest) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest | 
 *DeviceApi* | [**UpdateDevice**](docs/DeviceApi.md#updatedevice) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} | 
 *RegistryApi* | [**CreateRegistry**](docs/RegistryApi.md#createregistry) | **POST** /subscriptions/{subscriptionId}/registries | 
 *RegistryApi* | [**DeleteRegistry**](docs/RegistryApi.md#deleteregistry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} | 
@@ -138,6 +139,7 @@ Class | Method | HTTP request | Description
  - [Model.BindRequest](docs/BindRequest.md)
  - [Model.BindRequestIdsGateway](docs/BindRequestIdsGateway.md)
  - [Model.BlockCommunicationBody](docs/BlockCommunicationBody.md)
+ - [Model.CustomOnboard](docs/CustomOnboard.md)
  - [Model.Device](docs/Device.md)
  - [Model.DeviceCommand](docs/DeviceCommand.md)
  - [Model.DeviceConfig](docs/DeviceConfig.md)

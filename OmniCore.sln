@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniCore", "src\OmniCore\OmniCore.csproj", "{02170449-684E-469E-BD46-94DC5836B99B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniCore", "src\OmniCore\OmniCore.csproj", "{E9D16708-A360-4F88-B38F-3622EB7333C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniCore.Test", "src\OmniCore.Test\OmniCore.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{02170449-684E-469E-BD46-94DC5836B99B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02170449-684E-469E-BD46-94DC5836B99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02170449-684E-469E-BD46-94DC5836B99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02170449-684E-469E-BD46-94DC5836B99B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D16708-A360-4F88-B38F-3622EB7333C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D16708-A360-4F88-B38F-3622EB7333C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D16708-A360-4F88-B38F-3622EB7333C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D16708-A360-4F88-B38F-3622EB7333C0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU

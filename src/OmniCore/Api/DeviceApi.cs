@@ -406,6 +406,35 @@ namespace OmniCore.Api
         /// 
         /// </summary>
         /// <remarks>
+        /// Approve/Reject a Custom Onboard Request
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Info</returns>
+        Info UpdateCustomOnboardRequest(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Approve/Reject a Custom Onboard Request
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Info</returns>
+        ApiResponse<Info> UpdateCustomOnboardRequestWithHttpInfo(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
         /// Modify device under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
@@ -843,6 +872,37 @@ namespace OmniCore.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceConfig)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeviceConfig>> UpdateConfigurationToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Approve/Reject a Custom Onboard Request
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Info</returns>
+        System.Threading.Tasks.Task<Info> UpdateCustomOnboardRequestAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// Approve/Reject a Custom Onboard Request
+        /// </remarks>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Info)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Info>> UpdateCustomOnboardRequestWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -3785,6 +3845,228 @@ namespace OmniCore.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateConfigurationToDevice", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Approve/Reject a Custom Onboard Request
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>Info</returns>
+        public Info UpdateCustomOnboardRequest(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0)
+        {
+            OmniCore.Client.ApiResponse<Info> localVarResponse = UpdateCustomOnboardRequestWithHttpInfo(subscriptionid, registryId, deviceId, device);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Approve/Reject a Custom Onboard Request
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Info</returns>
+        public OmniCore.Client.ApiResponse<Info> UpdateCustomOnboardRequestWithHttpInfo(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0)
+        {
+            // verify the required parameter 'subscriptionid' is set
+            if (subscriptionid == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionid' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            // verify the required parameter 'deviceId' is set
+            if (deviceId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            // verify the required parameter 'device' is set
+            if (device == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = OmniCore.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = OmniCore.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
+            localVarRequestOptions.Data = device;
+
+            localVarRequestOptions.Operation = "DeviceApi.UpdateCustomOnboardRequest";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Info>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCustomOnboardRequest", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  Approve/Reject a Custom Onboard Request
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of Info</returns>
+        public async System.Threading.Tasks.Task<Info> UpdateCustomOnboardRequestAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            OmniCore.Client.ApiResponse<Info> localVarResponse = await UpdateCustomOnboardRequestWithHttpInfoAsync(subscriptionid, registryId, deviceId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  Approve/Reject a Custom Onboard Request
+        /// </summary>
+        /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="subscriptionid">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
+        /// <param name="deviceId">Device ID</param>
+        /// <param name="device">application/json</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (Info)</returns>
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UpdateCustomOnboardRequestWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'subscriptionid' is set
+            if (subscriptionid == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionid' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            // verify the required parameter 'deviceId' is set
+            if (deviceId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+            // verify the required parameter 'device' is set
+            if (device == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UpdateCustomOnboardRequest");
+            }
+
+
+            OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = OmniCore.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = OmniCore.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
+            localVarRequestOptions.Data = device;
+
+            localVarRequestOptions.Operation = "DeviceApi.UpdateCustomOnboardRequest";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (apiKey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Info>("/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateCustomOnboardRequest", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

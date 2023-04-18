@@ -1,6 +1,6 @@
 # OmniCore.Api.DeviceApi
 
-All URIs are relative to *https://api.omnicore.korewireless.com/model-state-management*
+All URIs are relative to *https://api.korewireless.com/omnicore*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -17,6 +17,7 @@ All URIs are relative to *https://api.omnicore.korewireless.com/model-state-mana
 | [**UnBindDevice**](DeviceApi.md#unbinddevice) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway |  |
 | [**UnBindDevices**](DeviceApi.md#unbinddevices) | **POST** /subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway |  |
 | [**UpdateConfigurationToDevice**](DeviceApi.md#updateconfigurationtodevice) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateConfigurationToDevice |  |
+| [**UpdateCustomOnboardRequest**](DeviceApi.md#updatecustomonboardrequest) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/updateCustomOnboardRequest |  |
 | [**UpdateDevice**](DeviceApi.md#updatedevice) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} |  |
 
 <a name="binddevice"></a>
@@ -42,7 +43,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -145,7 +146,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -248,7 +249,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -353,7 +354,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -456,7 +457,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -559,7 +560,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -664,7 +665,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -767,7 +768,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -884,7 +885,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -989,7 +990,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1094,7 +1095,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1197,7 +1198,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1300,7 +1301,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1382,6 +1383,111 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a name="updatecustomonboardrequest"></a>
+# **UpdateCustomOnboardRequest**
+> Info UpdateCustomOnboardRequest (string subscriptionid, string registryId, string deviceId, CustomOnboard device)
+
+
+
+Approve/Reject a Custom Onboard Request
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class UpdateCustomOnboardRequestExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.korewireless.com/omnicore";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DeviceApi(config);
+            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
+            var registryId = "registryId_example";  // string | Registry ID
+            var deviceId = "deviceId_example";  // string | Device ID
+            var device = new CustomOnboard(); // CustomOnboard | application/json
+
+            try
+            {
+                Info result = apiInstance.UpdateCustomOnboardRequest(subscriptionid, registryId, deviceId, device);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DeviceApi.UpdateCustomOnboardRequest: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateCustomOnboardRequestWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Info> response = apiInstance.UpdateCustomOnboardRequestWithHttpInfo(subscriptionid, registryId, deviceId, device);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DeviceApi.UpdateCustomOnboardRequestWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionid** | **string** | Subscription ID |  |
+| **registryId** | **string** | Registry ID |  |
+| **deviceId** | **string** | Device ID |  |
+| **device** | [**CustomOnboard**](CustomOnboard.md) | application/json |  |
+
+### Return type
+
+[**Info**](Info.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a name="updatedevice"></a>
 # **UpdateDevice**
 > Device UpdateDevice (string subscriptionId, string registryId, string deviceId, string updateMask, Device device)
@@ -1405,7 +1511,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.omnicore.korewireless.com/model-state-management";
+            config.BasePath = "https://api.korewireless.com/omnicore";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
