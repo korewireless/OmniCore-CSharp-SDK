@@ -35,7 +35,6 @@ docs/RegistryApi.md
 docs/RegistryCredential.md
 docs/X509CertificateDetails.md
 git_push.sh
-src/OmniCore.Test/Model/CustomOnboardTests.cs
 src/OmniCore.Test/OmniCore.Test.csproj
 src/OmniCore/Api/DeviceApi.cs
 src/OmniCore/Api/RegistryApi.cs

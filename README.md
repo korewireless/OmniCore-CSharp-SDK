@@ -84,11 +84,11 @@ namespace Example
             var apiInstance = new DeviceApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var device = new BindRequest(); // BindRequest | application/json
+            var bind = new BindRequest(); // BindRequest | application/json
 
             try
             {
-                Info result = apiInstance.BindDevice(subscriptionId, registryId, device);
+                Info result = apiInstance.BindDevice(subscriptionId, registryId, bind);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)

@@ -36,10 +36,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        Info BindDevice(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0);
+        Info BindDevice(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -50,10 +50,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        ApiResponse<Info> BindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0);
+        ApiResponse<Info> BindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -63,10 +63,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        Info BindDevices(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0);
+        Info BindDevices(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -77,10 +77,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        ApiResponse<Info> BindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0);
+        ApiResponse<Info> BindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -91,10 +91,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object BlockDeviceCommuncation(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0);
+        Object BlockDeviceCommuncation(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -106,10 +106,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> BlockDeviceCommuncationWithHttpInfo(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0);
+        ApiResponse<Object> BlockDeviceCommuncationWithHttpInfo(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -300,10 +300,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        Object SendCommandToDevice(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0);
+        Object SendCommandToDevice(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -315,10 +315,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> SendCommandToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0);
+        ApiResponse<Object> SendCommandToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -328,10 +328,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        Info UnBindDevice(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0);
+        Info UnBindDevice(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -342,10 +342,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        ApiResponse<Info> UnBindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0);
+        ApiResponse<Info> UnBindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -355,10 +355,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        Info UnBindDevices(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0);
+        Info UnBindDevices(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -369,10 +369,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        ApiResponse<Info> UnBindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0);
+        ApiResponse<Info> UnBindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -383,10 +383,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceConfig</returns>
-        DeviceConfig UpdateConfigurationToDevice(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0);
+        DeviceConfig UpdateConfigurationToDevice(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -398,10 +398,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceConfig</returns>
-        ApiResponse<DeviceConfig> UpdateConfigurationToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0);
+        ApiResponse<DeviceConfig> UpdateConfigurationToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -412,10 +412,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        Info UpdateCustomOnboardRequest(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0);
+        Info UpdateCustomOnboardRequest(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -427,10 +427,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        ApiResponse<Info> UpdateCustomOnboardRequestWithHttpInfo(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0);
+        ApiResponse<Info> UpdateCustomOnboardRequestWithHttpInfo(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -480,11 +480,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        System.Threading.Tasks.Task<Info> BindDeviceAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Info> BindDeviceAsync(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -495,11 +495,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Info>> BindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Info>> BindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -509,11 +509,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        System.Threading.Tasks.Task<Info> BindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Info> BindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -524,11 +524,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Info>> BindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Info>> BindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -539,11 +539,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> BlockDeviceCommuncationAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> BlockDeviceCommuncationAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -555,11 +555,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> BlockDeviceCommuncationWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> BlockDeviceCommuncationWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -762,11 +762,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SendCommandToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> SendCommandToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -778,11 +778,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SendCommandToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SendCommandToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -792,11 +792,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        System.Threading.Tasks.Task<Info> UnBindDeviceAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Info> UnBindDeviceAsync(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -807,11 +807,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Info>> UnBindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Info>> UnBindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -821,11 +821,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        System.Threading.Tasks.Task<Info> UnBindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Info> UnBindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -836,11 +836,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Info>> UnBindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Info>> UnBindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -851,11 +851,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceConfig</returns>
-        System.Threading.Tasks.Task<DeviceConfig> UpdateConfigurationToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeviceConfig> UpdateConfigurationToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -867,11 +867,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceConfig)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeviceConfig>> UpdateConfigurationToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeviceConfig>> UpdateConfigurationToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -882,11 +882,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        System.Threading.Tasks.Task<Info> UpdateCustomOnboardRequestAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Info> UpdateCustomOnboardRequestAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -898,11 +898,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Info>> UpdateCustomOnboardRequestWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Info>> UpdateCustomOnboardRequestWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1062,12 +1062,12 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        public Info BindDevice(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0)
+        public Info BindDevice(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = BindDeviceWithHttpInfo(subscriptionId, registryId, device);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = BindDeviceWithHttpInfo(subscriptionId, registryId, bind);
             return localVarResponse.Data;
         }
 
@@ -1077,10 +1077,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        public OmniCore.Client.ApiResponse<Info> BindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Info> BindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1094,10 +1094,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->BindDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'bind' is set
+            if (bind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->BindDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'bind' when calling DeviceApi->BindDevice");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -1125,7 +1125,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = bind;
 
             localVarRequestOptions.Operation = "DeviceApi.BindDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1162,13 +1162,13 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        public async System.Threading.Tasks.Task<Info> BindDeviceAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Info> BindDeviceAsync(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = await BindDeviceWithHttpInfoAsync(subscriptionId, registryId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = await BindDeviceWithHttpInfoAsync(subscriptionId, registryId, bind, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1178,11 +1178,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> BindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> BindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1196,10 +1196,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->BindDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'bind' is set
+            if (bind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->BindDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'bind' when calling DeviceApi->BindDevice");
             }
 
 
@@ -1228,7 +1228,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = bind;
 
             localVarRequestOptions.Operation = "DeviceApi.BindDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1266,12 +1266,12 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        public Info BindDevices(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0)
+        public Info BindDevices(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = BindDevicesWithHttpInfo(subscriptionId, registryId, device);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = BindDevicesWithHttpInfo(subscriptionId, registryId, bind);
             return localVarResponse.Data;
         }
 
@@ -1281,10 +1281,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        public OmniCore.Client.ApiResponse<Info> BindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Info> BindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1298,10 +1298,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->BindDevices");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'bind' is set
+            if (bind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->BindDevices");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'bind' when calling DeviceApi->BindDevices");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -1329,7 +1329,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = bind;
 
             localVarRequestOptions.Operation = "DeviceApi.BindDevices";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1366,13 +1366,13 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        public async System.Threading.Tasks.Task<Info> BindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Info> BindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = await BindDevicesWithHttpInfoAsync(subscriptionId, registryId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = await BindDevicesWithHttpInfoAsync(subscriptionId, registryId, bind, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1382,11 +1382,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="bind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> BindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> BindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway bind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1400,10 +1400,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->BindDevices");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'bind' is set
+            if (bind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->BindDevices");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'bind' when calling DeviceApi->BindDevices");
             }
 
 
@@ -1432,7 +1432,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = bind;
 
             localVarRequestOptions.Operation = "DeviceApi.BindDevices";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1471,12 +1471,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object BlockDeviceCommuncation(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0)
+        public Object BlockDeviceCommuncation(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Object> localVarResponse = BlockDeviceCommuncationWithHttpInfo(subscriptionid, registryId, deviceId, device);
+            OmniCore.Client.ApiResponse<Object> localVarResponse = BlockDeviceCommuncationWithHttpInfo(subscriptionid, registryId, deviceId, block);
             return localVarResponse.Data;
         }
 
@@ -1487,10 +1487,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public OmniCore.Client.ApiResponse<Object> BlockDeviceCommuncationWithHttpInfo(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Object> BlockDeviceCommuncationWithHttpInfo(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -1510,10 +1510,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->BlockDeviceCommuncation");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'block' is set
+            if (block == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->BlockDeviceCommuncation");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'block' when calling DeviceApi->BlockDeviceCommuncation");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -1542,7 +1542,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = block;
 
             localVarRequestOptions.Operation = "DeviceApi.BlockDeviceCommuncation";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1580,13 +1580,13 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> BlockDeviceCommuncationAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> BlockDeviceCommuncationAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Object> localVarResponse = await BlockDeviceCommuncationWithHttpInfoAsync(subscriptionid, registryId, deviceId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Object> localVarResponse = await BlockDeviceCommuncationWithHttpInfoAsync(subscriptionid, registryId, deviceId, block, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1597,11 +1597,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="block">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Object>> BlockDeviceCommuncationWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Object>> BlockDeviceCommuncationWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -1621,10 +1621,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->BlockDeviceCommuncation");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'block' is set
+            if (block == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->BlockDeviceCommuncation");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'block' when calling DeviceApi->BlockDeviceCommuncation");
             }
 
 
@@ -1654,7 +1654,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = block;
 
             localVarRequestOptions.Operation = "DeviceApi.BlockDeviceCommuncation";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3009,12 +3009,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Object</returns>
-        public Object SendCommandToDevice(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0)
+        public Object SendCommandToDevice(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Object> localVarResponse = SendCommandToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, device);
+            OmniCore.Client.ApiResponse<Object> localVarResponse = SendCommandToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, command);
             return localVarResponse.Data;
         }
 
@@ -3025,10 +3025,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object</returns>
-        public OmniCore.Client.ApiResponse<Object> SendCommandToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Object> SendCommandToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -3048,10 +3048,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->SendCommandToDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'command' is set
+            if (command == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->SendCommandToDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'command' when calling DeviceApi->SendCommandToDevice");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -3080,7 +3080,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = command;
 
             localVarRequestOptions.Operation = "DeviceApi.SendCommandToDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3118,13 +3118,13 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SendCommandToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> SendCommandToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Object> localVarResponse = await SendCommandToDeviceWithHttpInfoAsync(subscriptionid, registryId, deviceId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Object> localVarResponse = await SendCommandToDeviceWithHttpInfoAsync(subscriptionid, registryId, deviceId, command, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3135,11 +3135,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="command">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Object>> SendCommandToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Object>> SendCommandToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceCommand command, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -3159,10 +3159,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->SendCommandToDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'command' is set
+            if (command == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->SendCommandToDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'command' when calling DeviceApi->SendCommandToDevice");
             }
 
 
@@ -3192,7 +3192,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = command;
 
             localVarRequestOptions.Operation = "DeviceApi.SendCommandToDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3230,12 +3230,12 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        public Info UnBindDevice(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0)
+        public Info UnBindDevice(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = UnBindDeviceWithHttpInfo(subscriptionId, registryId, device);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = UnBindDeviceWithHttpInfo(subscriptionId, registryId, unbind);
             return localVarResponse.Data;
         }
 
@@ -3245,10 +3245,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        public OmniCore.Client.ApiResponse<Info> UnBindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Info> UnBindDeviceWithHttpInfo(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -3262,10 +3262,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->UnBindDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'unbind' is set
+            if (unbind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UnBindDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'unbind' when calling DeviceApi->UnBindDevice");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -3293,7 +3293,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = unbind;
 
             localVarRequestOptions.Operation = "DeviceApi.UnBindDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3330,13 +3330,13 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        public async System.Threading.Tasks.Task<Info> UnBindDeviceAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Info> UnBindDeviceAsync(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = await UnBindDeviceWithHttpInfoAsync(subscriptionId, registryId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = await UnBindDeviceWithHttpInfoAsync(subscriptionId, registryId, unbind, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3346,11 +3346,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UnBindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UnBindDeviceWithHttpInfoAsync(string subscriptionId, string registryId, BindRequest unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -3364,10 +3364,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->UnBindDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'unbind' is set
+            if (unbind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UnBindDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'unbind' when calling DeviceApi->UnBindDevice");
             }
 
 
@@ -3396,7 +3396,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = unbind;
 
             localVarRequestOptions.Operation = "DeviceApi.UnBindDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3434,12 +3434,12 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        public Info UnBindDevices(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0)
+        public Info UnBindDevices(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = UnBindDevicesWithHttpInfo(subscriptionId, registryId, device);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = UnBindDevicesWithHttpInfo(subscriptionId, registryId, unbind);
             return localVarResponse.Data;
         }
 
@@ -3449,10 +3449,10 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        public OmniCore.Client.ApiResponse<Info> UnBindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Info> UnBindDevicesWithHttpInfo(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -3466,10 +3466,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->UnBindDevices");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'unbind' is set
+            if (unbind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UnBindDevices");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'unbind' when calling DeviceApi->UnBindDevices");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -3497,7 +3497,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = unbind;
 
             localVarRequestOptions.Operation = "DeviceApi.UnBindDevices";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3534,13 +3534,13 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        public async System.Threading.Tasks.Task<Info> UnBindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Info> UnBindDevicesAsync(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = await UnBindDevicesWithHttpInfoAsync(subscriptionId, registryId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = await UnBindDevicesWithHttpInfoAsync(subscriptionId, registryId, unbind, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3550,11 +3550,11 @@ namespace OmniCore.Api
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="subscriptionId">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="unbind">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UnBindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UnBindDevicesWithHttpInfoAsync(string subscriptionId, string registryId, BindRequestIdsGateway unbind, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -3568,10 +3568,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->UnBindDevices");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'unbind' is set
+            if (unbind == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UnBindDevices");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'unbind' when calling DeviceApi->UnBindDevices");
             }
 
 
@@ -3600,7 +3600,7 @@ namespace OmniCore.Api
 
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = unbind;
 
             localVarRequestOptions.Operation = "DeviceApi.UnBindDevices";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3639,12 +3639,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeviceConfig</returns>
-        public DeviceConfig UpdateConfigurationToDevice(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0)
+        public DeviceConfig UpdateConfigurationToDevice(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<DeviceConfig> localVarResponse = UpdateConfigurationToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, device);
+            OmniCore.Client.ApiResponse<DeviceConfig> localVarResponse = UpdateConfigurationToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, configuration);
             return localVarResponse.Data;
         }
 
@@ -3655,10 +3655,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeviceConfig</returns>
-        public OmniCore.Client.ApiResponse<DeviceConfig> UpdateConfigurationToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<DeviceConfig> UpdateConfigurationToDeviceWithHttpInfo(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -3678,10 +3678,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->UpdateConfigurationToDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'configuration' is set
+            if (configuration == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UpdateConfigurationToDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'configuration' when calling DeviceApi->UpdateConfigurationToDevice");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -3710,7 +3710,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = configuration;
 
             localVarRequestOptions.Operation = "DeviceApi.UpdateConfigurationToDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3748,13 +3748,13 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeviceConfig</returns>
-        public async System.Threading.Tasks.Task<DeviceConfig> UpdateConfigurationToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeviceConfig> UpdateConfigurationToDeviceAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<DeviceConfig> localVarResponse = await UpdateConfigurationToDeviceWithHttpInfoAsync(subscriptionid, registryId, deviceId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<DeviceConfig> localVarResponse = await UpdateConfigurationToDeviceWithHttpInfoAsync(subscriptionid, registryId, deviceId, configuration, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3765,11 +3765,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="configuration">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeviceConfig)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<DeviceConfig>> UpdateConfigurationToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<DeviceConfig>> UpdateConfigurationToDeviceWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -3789,10 +3789,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->UpdateConfigurationToDevice");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'configuration' is set
+            if (configuration == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UpdateConfigurationToDevice");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'configuration' when calling DeviceApi->UpdateConfigurationToDevice");
             }
 
 
@@ -3822,7 +3822,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = configuration;
 
             localVarRequestOptions.Operation = "DeviceApi.UpdateConfigurationToDevice";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3861,12 +3861,12 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Info</returns>
-        public Info UpdateCustomOnboardRequest(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0)
+        public Info UpdateCustomOnboardRequest(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = UpdateCustomOnboardRequestWithHttpInfo(subscriptionid, registryId, deviceId, device);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = UpdateCustomOnboardRequestWithHttpInfo(subscriptionid, registryId, deviceId, customOnboard);
             return localVarResponse.Data;
         }
 
@@ -3877,10 +3877,10 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Info</returns>
-        public OmniCore.Client.ApiResponse<Info> UpdateCustomOnboardRequestWithHttpInfo(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Info> UpdateCustomOnboardRequestWithHttpInfo(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -3900,10 +3900,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->UpdateCustomOnboardRequest");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'customOnboard' is set
+            if (customOnboard == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UpdateCustomOnboardRequest");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'customOnboard' when calling DeviceApi->UpdateCustomOnboardRequest");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -3932,7 +3932,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = customOnboard;
 
             localVarRequestOptions.Operation = "DeviceApi.UpdateCustomOnboardRequest";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3970,13 +3970,13 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Info</returns>
-        public async System.Threading.Tasks.Task<Info> UpdateCustomOnboardRequestAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Info> UpdateCustomOnboardRequestAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = await UpdateCustomOnboardRequestWithHttpInfoAsync(subscriptionid, registryId, deviceId, device, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Info> localVarResponse = await UpdateCustomOnboardRequestWithHttpInfoAsync(subscriptionid, registryId, deviceId, customOnboard, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3987,11 +3987,11 @@ namespace OmniCore.Api
         /// <param name="subscriptionid">Subscription ID</param>
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
-        /// <param name="device">application/json</param>
+        /// <param name="customOnboard">application/json</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Info)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UpdateCustomOnboardRequestWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard device, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> UpdateCustomOnboardRequestWithHttpInfoAsync(string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionid' is set
             if (subscriptionid == null)
@@ -4011,10 +4011,10 @@ namespace OmniCore.Api
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'deviceId' when calling DeviceApi->UpdateCustomOnboardRequest");
             }
 
-            // verify the required parameter 'device' is set
-            if (device == null)
+            // verify the required parameter 'customOnboard' is set
+            if (customOnboard == null)
             {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'device' when calling DeviceApi->UpdateCustomOnboardRequest");
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'customOnboard' when calling DeviceApi->UpdateCustomOnboardRequest");
             }
 
 
@@ -4044,7 +4044,7 @@ namespace OmniCore.Api
             localVarRequestOptions.PathParameters.Add("subscriptionid", OmniCore.Client.ClientUtils.ParameterToString(subscriptionid)); // path parameter
             localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
-            localVarRequestOptions.Data = device;
+            localVarRequestOptions.Data = customOnboard;
 
             localVarRequestOptions.Operation = "DeviceApi.UpdateCustomOnboardRequest";
             localVarRequestOptions.OperationIndex = operationIndex;

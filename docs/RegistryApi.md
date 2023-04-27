@@ -421,7 +421,7 @@ catch (ApiException e)
 
 <a name="sendbroadcasttodevices"></a>
 # **SendBroadcastToDevices**
-> Object SendBroadcastToDevices (string subscriptionid, string registryId, DeviceCommand registry)
+> Object SendBroadcastToDevices (string subscriptionid, string registryId, DeviceCommand broadcast)
 
 
 
@@ -453,11 +453,11 @@ namespace Example
             var apiInstance = new RegistryApi(config);
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var registry = new DeviceCommand(); // DeviceCommand | application/json
+            var broadcast = new DeviceCommand(); // DeviceCommand | application/json
 
             try
             {
-                Object result = apiInstance.SendBroadcastToDevices(subscriptionid, registryId, registry);
+                Object result = apiInstance.SendBroadcastToDevices(subscriptionid, registryId, broadcast);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -477,7 +477,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.SendBroadcastToDevicesWithHttpInfo(subscriptionid, registryId, registry);
+    ApiResponse<Object> response = apiInstance.SendBroadcastToDevicesWithHttpInfo(subscriptionid, registryId, broadcast);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -496,7 +496,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionid** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **registry** | [**DeviceCommand**](DeviceCommand.md) | application/json |  |
+| **broadcast** | [**DeviceCommand**](DeviceCommand.md) | application/json |  |
 
 ### Return type
 

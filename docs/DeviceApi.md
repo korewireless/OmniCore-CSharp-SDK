@@ -22,7 +22,7 @@ All URIs are relative to *https://api.korewireless.com/omnicore*
 
 <a name="binddevice"></a>
 # **BindDevice**
-> Info BindDevice (string subscriptionId, string registryId, BindRequest device)
+> Info BindDevice (string subscriptionId, string registryId, BindRequest bind)
 
 
 
@@ -54,11 +54,11 @@ namespace Example
             var apiInstance = new DeviceApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var device = new BindRequest(); // BindRequest | application/json
+            var bind = new BindRequest(); // BindRequest | application/json
 
             try
             {
-                Info result = apiInstance.BindDevice(subscriptionId, registryId, device);
+                Info result = apiInstance.BindDevice(subscriptionId, registryId, bind);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -78,7 +78,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Info> response = apiInstance.BindDeviceWithHttpInfo(subscriptionId, registryId, device);
+    ApiResponse<Info> response = apiInstance.BindDeviceWithHttpInfo(subscriptionId, registryId, bind);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -97,7 +97,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **device** | [**BindRequest**](BindRequest.md) | application/json |  |
+| **bind** | [**BindRequest**](BindRequest.md) | application/json |  |
 
 ### Return type
 
@@ -125,7 +125,7 @@ catch (ApiException e)
 
 <a name="binddevices"></a>
 # **BindDevices**
-> Info BindDevices (string subscriptionId, string registryId, BindRequestIdsGateway device)
+> Info BindDevices (string subscriptionId, string registryId, BindRequestIdsGateway bind)
 
 
 
@@ -157,11 +157,11 @@ namespace Example
             var apiInstance = new DeviceApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var device = new BindRequestIdsGateway(); // BindRequestIdsGateway | application/json
+            var bind = new BindRequestIdsGateway(); // BindRequestIdsGateway | application/json
 
             try
             {
-                Info result = apiInstance.BindDevices(subscriptionId, registryId, device);
+                Info result = apiInstance.BindDevices(subscriptionId, registryId, bind);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -181,7 +181,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Info> response = apiInstance.BindDevicesWithHttpInfo(subscriptionId, registryId, device);
+    ApiResponse<Info> response = apiInstance.BindDevicesWithHttpInfo(subscriptionId, registryId, bind);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -200,7 +200,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **device** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md) | application/json |  |
+| **bind** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md) | application/json |  |
 
 ### Return type
 
@@ -228,7 +228,7 @@ catch (ApiException e)
 
 <a name="blockdevicecommuncation"></a>
 # **BlockDeviceCommuncation**
-> Object BlockDeviceCommuncation (string subscriptionid, string registryId, string deviceId, BlockCommunicationBody device)
+> Object BlockDeviceCommuncation (string subscriptionid, string registryId, string deviceId, BlockCommunicationBody block)
 
 
 
@@ -261,11 +261,11 @@ namespace Example
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
-            var device = new BlockCommunicationBody(); // BlockCommunicationBody | application/json
+            var block = new BlockCommunicationBody(); // BlockCommunicationBody | application/json
 
             try
             {
-                Object result = apiInstance.BlockDeviceCommuncation(subscriptionid, registryId, deviceId, device);
+                Object result = apiInstance.BlockDeviceCommuncation(subscriptionid, registryId, deviceId, block);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -285,7 +285,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.BlockDeviceCommuncationWithHttpInfo(subscriptionid, registryId, deviceId, device);
+    ApiResponse<Object> response = apiInstance.BlockDeviceCommuncationWithHttpInfo(subscriptionid, registryId, deviceId, block);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -305,7 +305,7 @@ catch (ApiException e)
 | **subscriptionid** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
-| **device** | [**BlockCommunicationBody**](BlockCommunicationBody.md) | application/json |  |
+| **block** | [**BlockCommunicationBody**](BlockCommunicationBody.md) | application/json |  |
 
 ### Return type
 
@@ -969,7 +969,7 @@ catch (ApiException e)
 
 <a name="sendcommandtodevice"></a>
 # **SendCommandToDevice**
-> Object SendCommandToDevice (string subscriptionid, string registryId, string deviceId, DeviceCommand device)
+> Object SendCommandToDevice (string subscriptionid, string registryId, string deviceId, DeviceCommand command)
 
 
 
@@ -1002,11 +1002,11 @@ namespace Example
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
-            var device = new DeviceCommand(); // DeviceCommand | application/json
+            var command = new DeviceCommand(); // DeviceCommand | application/json
 
             try
             {
-                Object result = apiInstance.SendCommandToDevice(subscriptionid, registryId, deviceId, device);
+                Object result = apiInstance.SendCommandToDevice(subscriptionid, registryId, deviceId, command);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1026,7 +1026,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Object> response = apiInstance.SendCommandToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, device);
+    ApiResponse<Object> response = apiInstance.SendCommandToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, command);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1046,7 +1046,7 @@ catch (ApiException e)
 | **subscriptionid** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
-| **device** | [**DeviceCommand**](DeviceCommand.md) | application/json |  |
+| **command** | [**DeviceCommand**](DeviceCommand.md) | application/json |  |
 
 ### Return type
 
@@ -1074,7 +1074,7 @@ catch (ApiException e)
 
 <a name="unbinddevice"></a>
 # **UnBindDevice**
-> Info UnBindDevice (string subscriptionId, string registryId, BindRequest device)
+> Info UnBindDevice (string subscriptionId, string registryId, BindRequest unbind)
 
 
 
@@ -1106,11 +1106,11 @@ namespace Example
             var apiInstance = new DeviceApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var device = new BindRequest(); // BindRequest | application/json
+            var unbind = new BindRequest(); // BindRequest | application/json
 
             try
             {
-                Info result = apiInstance.UnBindDevice(subscriptionId, registryId, device);
+                Info result = apiInstance.UnBindDevice(subscriptionId, registryId, unbind);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1130,7 +1130,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Info> response = apiInstance.UnBindDeviceWithHttpInfo(subscriptionId, registryId, device);
+    ApiResponse<Info> response = apiInstance.UnBindDeviceWithHttpInfo(subscriptionId, registryId, unbind);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1149,7 +1149,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **device** | [**BindRequest**](BindRequest.md) | application/json |  |
+| **unbind** | [**BindRequest**](BindRequest.md) | application/json |  |
 
 ### Return type
 
@@ -1177,7 +1177,7 @@ catch (ApiException e)
 
 <a name="unbinddevices"></a>
 # **UnBindDevices**
-> Info UnBindDevices (string subscriptionId, string registryId, BindRequestIdsGateway device)
+> Info UnBindDevices (string subscriptionId, string registryId, BindRequestIdsGateway unbind)
 
 
 
@@ -1209,11 +1209,11 @@ namespace Example
             var apiInstance = new DeviceApi(config);
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
-            var device = new BindRequestIdsGateway(); // BindRequestIdsGateway | application/json
+            var unbind = new BindRequestIdsGateway(); // BindRequestIdsGateway | application/json
 
             try
             {
-                Info result = apiInstance.UnBindDevices(subscriptionId, registryId, device);
+                Info result = apiInstance.UnBindDevices(subscriptionId, registryId, unbind);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1233,7 +1233,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Info> response = apiInstance.UnBindDevicesWithHttpInfo(subscriptionId, registryId, device);
+    ApiResponse<Info> response = apiInstance.UnBindDevicesWithHttpInfo(subscriptionId, registryId, unbind);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1252,7 +1252,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **subscriptionId** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
-| **device** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md) | application/json |  |
+| **unbind** | [**BindRequestIdsGateway**](BindRequestIdsGateway.md) | application/json |  |
 
 ### Return type
 
@@ -1280,7 +1280,7 @@ catch (ApiException e)
 
 <a name="updateconfigurationtodevice"></a>
 # **UpdateConfigurationToDevice**
-> DeviceConfig UpdateConfigurationToDevice (string subscriptionid, string registryId, string deviceId, DeviceConfiguration device)
+> DeviceConfig UpdateConfigurationToDevice (string subscriptionid, string registryId, string deviceId, DeviceConfiguration configuration)
 
 
 
@@ -1313,11 +1313,11 @@ namespace Example
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
-            var device = new DeviceConfiguration(); // DeviceConfiguration | application/json
+            var configuration = new DeviceConfiguration(); // DeviceConfiguration | application/json
 
             try
             {
-                DeviceConfig result = apiInstance.UpdateConfigurationToDevice(subscriptionid, registryId, deviceId, device);
+                DeviceConfig result = apiInstance.UpdateConfigurationToDevice(subscriptionid, registryId, deviceId, configuration);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1337,7 +1337,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<DeviceConfig> response = apiInstance.UpdateConfigurationToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, device);
+    ApiResponse<DeviceConfig> response = apiInstance.UpdateConfigurationToDeviceWithHttpInfo(subscriptionid, registryId, deviceId, configuration);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1357,7 +1357,7 @@ catch (ApiException e)
 | **subscriptionid** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
-| **device** | [**DeviceConfiguration**](DeviceConfiguration.md) | application/json |  |
+| **configuration** | [**DeviceConfiguration**](DeviceConfiguration.md) | application/json |  |
 
 ### Return type
 
@@ -1385,7 +1385,7 @@ catch (ApiException e)
 
 <a name="updatecustomonboardrequest"></a>
 # **UpdateCustomOnboardRequest**
-> Info UpdateCustomOnboardRequest (string subscriptionid, string registryId, string deviceId, CustomOnboard device)
+> Info UpdateCustomOnboardRequest (string subscriptionid, string registryId, string deviceId, CustomOnboard customOnboard)
 
 
 
@@ -1418,11 +1418,11 @@ namespace Example
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
             var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
-            var device = new CustomOnboard(); // CustomOnboard | application/json
+            var customOnboard = new CustomOnboard(); // CustomOnboard | application/json
 
             try
             {
-                Info result = apiInstance.UpdateCustomOnboardRequest(subscriptionid, registryId, deviceId, device);
+                Info result = apiInstance.UpdateCustomOnboardRequest(subscriptionid, registryId, deviceId, customOnboard);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1442,7 +1442,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Info> response = apiInstance.UpdateCustomOnboardRequestWithHttpInfo(subscriptionid, registryId, deviceId, device);
+    ApiResponse<Info> response = apiInstance.UpdateCustomOnboardRequestWithHttpInfo(subscriptionid, registryId, deviceId, customOnboard);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1462,7 +1462,7 @@ catch (ApiException e)
 | **subscriptionid** | **string** | Subscription ID |  |
 | **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
-| **device** | [**CustomOnboard**](CustomOnboard.md) | application/json |  |
+| **customOnboard** | [**CustomOnboard**](CustomOnboard.md) | application/json |  |
 
 ### Return type
 
