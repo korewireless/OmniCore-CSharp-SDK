@@ -35,20 +35,29 @@ namespace OmniCore.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EventNotificationConfig" /> class.
         /// </summary>
-        /// <param name="pubsubTopicName">PubsubTopicName: A Cloud Pub/Sub topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;..</param>
+        /// <param name="pubsubTopicName">PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;..</param>
+        /// <param name="isGcpPubSub">Describe whether the topic is Gcp pubsub topic or Omni topic.</param>
         /// <param name="subfolderMatches">SubfolderMatches: If the subfolder name matches this string exactly, this configuration will be used. The string must not include the leading &#39;/&#39; character. If empty, all strings are matched. This field is used only for telemetry events; subfolders are not supported for state changes..</param>
-        public EventNotificationConfig(string pubsubTopicName = default(string), string subfolderMatches = default(string))
+        public EventNotificationConfig(string pubsubTopicName = default(string), Bool isGcpPubSub = default(Bool), string subfolderMatches = default(string))
         {
             this.PubsubTopicName = pubsubTopicName;
+            this.IsGcpPubSub = isGcpPubSub;
             this.SubfolderMatches = subfolderMatches;
         }
 
         /// <summary>
-        /// PubsubTopicName: A Cloud Pub/Sub topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.
+        /// PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.
         /// </summary>
-        /// <value>PubsubTopicName: A Cloud Pub/Sub topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.</value>
+        /// <value>PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.</value>
         [DataMember(Name = "pubsubTopicName", EmitDefaultValue = false)]
         public string PubsubTopicName { get; set; }
+
+        /// <summary>
+        /// Describe whether the topic is Gcp pubsub topic or Omni topic
+        /// </summary>
+        /// <value>Describe whether the topic is Gcp pubsub topic or Omni topic</value>
+        [DataMember(Name = "isGcpPubSub", EmitDefaultValue = false)]
+        public Bool IsGcpPubSub { get; set; }
 
         /// <summary>
         /// SubfolderMatches: If the subfolder name matches this string exactly, this configuration will be used. The string must not include the leading &#39;/&#39; character. If empty, all strings are matched. This field is used only for telemetry events; subfolders are not supported for state changes.
@@ -66,6 +75,7 @@ namespace OmniCore.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class EventNotificationConfig {\n");
             sb.Append("  PubsubTopicName: ").Append(PubsubTopicName).Append("\n");
+            sb.Append("  IsGcpPubSub: ").Append(IsGcpPubSub).Append("\n");
             sb.Append("  SubfolderMatches: ").Append(SubfolderMatches).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -108,6 +118,11 @@ namespace OmniCore.Model
                     this.PubsubTopicName.Equals(input.PubsubTopicName))
                 ) && 
                 (
+                    this.IsGcpPubSub == input.IsGcpPubSub ||
+                    (this.IsGcpPubSub != null &&
+                    this.IsGcpPubSub.Equals(input.IsGcpPubSub))
+                ) && 
+                (
                     this.SubfolderMatches == input.SubfolderMatches ||
                     (this.SubfolderMatches != null &&
                     this.SubfolderMatches.Equals(input.SubfolderMatches))
@@ -126,6 +141,10 @@ namespace OmniCore.Model
                 if (this.PubsubTopicName != null)
                 {
                     hashCode = (hashCode * 59) + this.PubsubTopicName.GetHashCode();
+                }
+                if (this.IsGcpPubSub != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsGcpPubSub.GetHashCode();
                 }
                 if (this.SubfolderMatches != null)
                 {

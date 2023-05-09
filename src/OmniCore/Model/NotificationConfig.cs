@@ -35,18 +35,27 @@ namespace OmniCore.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationConfig" /> class.
         /// </summary>
-        /// <param name="pubsubTopicName">PubsubTopicName: A Cloud Pub/Sub topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;..</param>
-        public NotificationConfig(string pubsubTopicName = default(string))
+        /// <param name="pubsubTopicName">PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;..</param>
+        /// <param name="isGcpPubSub">Describe whether the topic is Gcp pubsub topic or Omni topic.</param>
+        public NotificationConfig(string pubsubTopicName = default(string), Bool isGcpPubSub = default(Bool))
         {
             this.PubsubTopicName = pubsubTopicName;
+            this.IsGcpPubSub = isGcpPubSub;
         }
 
         /// <summary>
-        /// PubsubTopicName: A Cloud Pub/Sub topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.
+        /// PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.
         /// </summary>
-        /// <value>PubsubTopicName: A Cloud Pub/Sub topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.</value>
+        /// <value>PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.</value>
         [DataMember(Name = "pubsubTopicName", EmitDefaultValue = false)]
         public string PubsubTopicName { get; set; }
+
+        /// <summary>
+        /// Describe whether the topic is Gcp pubsub topic or Omni topic
+        /// </summary>
+        /// <value>Describe whether the topic is Gcp pubsub topic or Omni topic</value>
+        [DataMember(Name = "isGcpPubSub", EmitDefaultValue = false)]
+        public Bool IsGcpPubSub { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -57,6 +66,7 @@ namespace OmniCore.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class NotificationConfig {\n");
             sb.Append("  PubsubTopicName: ").Append(PubsubTopicName).Append("\n");
+            sb.Append("  IsGcpPubSub: ").Append(IsGcpPubSub).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,6 +106,11 @@ namespace OmniCore.Model
                     this.PubsubTopicName == input.PubsubTopicName ||
                     (this.PubsubTopicName != null &&
                     this.PubsubTopicName.Equals(input.PubsubTopicName))
+                ) && 
+                (
+                    this.IsGcpPubSub == input.IsGcpPubSub ||
+                    (this.IsGcpPubSub != null &&
+                    this.IsGcpPubSub.Equals(input.IsGcpPubSub))
                 );
         }
 
@@ -111,6 +126,10 @@ namespace OmniCore.Model
                 if (this.PubsubTopicName != null)
                 {
                     hashCode = (hashCode * 59) + this.PubsubTopicName.GetHashCode();
+                }
+                if (this.IsGcpPubSub != null)
+                {
+                    hashCode = (hashCode * 59) + this.IsGcpPubSub.GetHashCode();
                 }
                 return hashCode;
             }
