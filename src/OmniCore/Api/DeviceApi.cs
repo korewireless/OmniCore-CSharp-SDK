@@ -200,12 +200,12 @@ namespace OmniCore.Api
         /// Get a device under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
-        Device GetDevice(string registryId, string subscriptionId, string deviceId, int operationIndex = 0);
+        Device GetDevice(string subscriptionId, string registryId, string deviceId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -214,12 +214,12 @@ namespace OmniCore.Api
         /// Get a device under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> GetDeviceWithHttpInfo(string registryId, string subscriptionId, string deviceId, int operationIndex = 0);
+        ApiResponse<Device> GetDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -227,8 +227,8 @@ namespace OmniCore.Api
         /// Get all devices under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -239,7 +239,7 @@ namespace OmniCore.Api
         /// <param name="gatewayListOptionsGatewayType">If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListDevicesResponse</returns>
-        ListDevicesResponse GetDevices(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0);
+        ListDevicesResponse GetDevices(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -248,8 +248,8 @@ namespace OmniCore.Api
         /// Get all devices under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -260,7 +260,7 @@ namespace OmniCore.Api
         /// <param name="gatewayListOptionsGatewayType">If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListDevicesResponse</returns>
-        ApiResponse<ListDevicesResponse> GetDevicesWithHttpInfo(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0);
+        ApiResponse<ListDevicesResponse> GetDevicesWithHttpInfo(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -656,13 +656,13 @@ namespace OmniCore.Api
         /// Get a device under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> GetDeviceAsync(string registryId, string subscriptionId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Device> GetDeviceAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -671,13 +671,13 @@ namespace OmniCore.Api
         /// Get a device under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> GetDeviceWithHttpInfoAsync(string registryId, string subscriptionId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Device>> GetDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -685,8 +685,8 @@ namespace OmniCore.Api
         /// Get all devices under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -698,7 +698,7 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListDevicesResponse</returns>
-        System.Threading.Tasks.Task<ListDevicesResponse> GetDevicesAsync(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListDevicesResponse> GetDevicesAsync(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -707,8 +707,8 @@ namespace OmniCore.Api
         /// Get all devices under a registry
         /// </remarks>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -720,7 +720,7 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListDevicesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListDevicesResponse>> GetDevicesWithHttpInfoAsync(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListDevicesResponse>> GetDevicesWithHttpInfoAsync(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -2310,14 +2310,14 @@ namespace OmniCore.Api
         ///  Get a device under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Device</returns>
-        public Device GetDevice(string registryId, string subscriptionId, string deviceId, int operationIndex = 0)
+        public Device GetDevice(string subscriptionId, string registryId, string deviceId, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Device> localVarResponse = GetDeviceWithHttpInfo(registryId, subscriptionId, deviceId);
+            OmniCore.Client.ApiResponse<Device> localVarResponse = GetDeviceWithHttpInfo(subscriptionId, registryId, deviceId);
             return localVarResponse.Data;
         }
 
@@ -2325,23 +2325,23 @@ namespace OmniCore.Api
         ///  Get a device under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Device</returns>
-        public OmniCore.Client.ApiResponse<Device> GetDeviceWithHttpInfo(string registryId, string subscriptionId, string deviceId, int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<Device> GetDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, int operationIndex = 0)
         {
-            // verify the required parameter 'registryId' is set
-            if (registryId == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevice");
-            }
-
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionId' when calling DeviceApi->GetDevice");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevice");
             }
 
             // verify the required parameter 'deviceId' is set
@@ -2372,8 +2372,8 @@ namespace OmniCore.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
 
             localVarRequestOptions.Operation = "DeviceApi.GetDevice";
@@ -2409,15 +2409,15 @@ namespace OmniCore.Api
         ///  Get a device under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> GetDeviceAsync(string registryId, string subscriptionId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Device> GetDeviceAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Device> localVarResponse = await GetDeviceWithHttpInfoAsync(registryId, subscriptionId, deviceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Device> localVarResponse = await GetDeviceWithHttpInfoAsync(subscriptionId, registryId, deviceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2425,24 +2425,24 @@ namespace OmniCore.Api
         ///  Get a device under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Device>> GetDeviceWithHttpInfoAsync(string registryId, string subscriptionId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Device>> GetDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'registryId' is set
-            if (registryId == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevice");
-            }
-
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionId' when calling DeviceApi->GetDevice");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevice");
             }
 
             // verify the required parameter 'deviceId' is set
@@ -2474,8 +2474,8 @@ namespace OmniCore.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("deviceId", OmniCore.Client.ClientUtils.ParameterToString(deviceId)); // path parameter
 
             localVarRequestOptions.Operation = "DeviceApi.GetDevice";
@@ -2512,8 +2512,8 @@ namespace OmniCore.Api
         ///  Get all devices under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -2524,9 +2524,9 @@ namespace OmniCore.Api
         /// <param name="gatewayListOptionsGatewayType">If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListDevicesResponse</returns>
-        public ListDevicesResponse GetDevices(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0)
+        public ListDevicesResponse GetDevices(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<ListDevicesResponse> localVarResponse = GetDevicesWithHttpInfo(registryId, subscriptionId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
+            OmniCore.Client.ApiResponse<ListDevicesResponse> localVarResponse = GetDevicesWithHttpInfo(subscriptionId, registryId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
             return localVarResponse.Data;
         }
 
@@ -2534,8 +2534,8 @@ namespace OmniCore.Api
         ///  Get all devices under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -2546,18 +2546,18 @@ namespace OmniCore.Api
         /// <param name="gatewayListOptionsGatewayType">If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListDevicesResponse</returns>
-        public OmniCore.Client.ApiResponse<ListDevicesResponse> GetDevicesWithHttpInfo(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0)
+        public OmniCore.Client.ApiResponse<ListDevicesResponse> GetDevicesWithHttpInfo(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0)
         {
-            // verify the required parameter 'registryId' is set
-            if (registryId == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevices");
-            }
-
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionId' when calling DeviceApi->GetDevices");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevices");
             }
 
             OmniCore.Client.RequestOptions localVarRequestOptions = new OmniCore.Client.RequestOptions();
@@ -2582,8 +2582,8 @@ namespace OmniCore.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             if (pageNumber != null)
             {
                 localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "pageNumber", pageNumber));
@@ -2650,8 +2650,8 @@ namespace OmniCore.Api
         ///  Get all devices under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -2663,9 +2663,9 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListDevicesResponse</returns>
-        public async System.Threading.Tasks.Task<ListDevicesResponse> GetDevicesAsync(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListDevicesResponse> GetDevicesAsync(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<ListDevicesResponse> localVarResponse = await GetDevicesWithHttpInfoAsync(registryId, subscriptionId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<ListDevicesResponse> localVarResponse = await GetDevicesWithHttpInfoAsync(subscriptionId, registryId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2673,8 +2673,8 @@ namespace OmniCore.Api
         ///  Get all devices under a registry
         /// </summary>
         /// <exception cref="OmniCore.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="registryId">Registry ID</param>
         /// <param name="subscriptionId">Subscription ID</param>
+        /// <param name="registryId">Registry ID</param>
         /// <param name="pageNumber">Page Number (optional)</param>
         /// <param name="pageSize">The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional)</param>
         /// <param name="fieldMask">The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional)</param>
@@ -2686,18 +2686,18 @@ namespace OmniCore.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListDevicesResponse)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDevicesResponse>> GetDevicesWithHttpInfoAsync(string registryId, string subscriptionId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<ListDevicesResponse>> GetDevicesWithHttpInfoAsync(string subscriptionId, string registryId, int? pageNumber = default(int?), int? pageSize = default(int?), string fieldMask = default(string), List<string> deviceIds = default(List<string>), List<string> deviceNumIds = default(List<string>), string gatewayListOptionsAssociationsDeviceId = default(string), string gatewayListOptionsAssociationsGatewayId = default(string), string gatewayListOptionsGatewayType = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            // verify the required parameter 'registryId' is set
-            if (registryId == null)
-            {
-                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevices");
-            }
-
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
             {
                 throw new OmniCore.Client.ApiException(400, "Missing required parameter 'subscriptionId' when calling DeviceApi->GetDevices");
+            }
+
+            // verify the required parameter 'registryId' is set
+            if (registryId == null)
+            {
+                throw new OmniCore.Client.ApiException(400, "Missing required parameter 'registryId' when calling DeviceApi->GetDevices");
             }
 
 
@@ -2723,8 +2723,8 @@ namespace OmniCore.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             localVarRequestOptions.PathParameters.Add("subscriptionId", OmniCore.Client.ClientUtils.ParameterToString(subscriptionId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("registryId", OmniCore.Client.ClientUtils.ParameterToString(registryId)); // path parameter
             if (pageNumber != null)
             {
                 localVarRequestOptions.QueryParameters.Add(OmniCore.Client.ClientUtils.ParameterToMultiMap("", "pageNumber", pageNumber));

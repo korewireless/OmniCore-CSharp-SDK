@@ -644,7 +644,7 @@ catch (ApiException e)
 
 <a name="getdevice"></a>
 # **GetDevice**
-> Device GetDevice (string registryId, string subscriptionId, string deviceId)
+> Device GetDevice (string subscriptionId, string registryId, string deviceId)
 
 
 
@@ -674,13 +674,13 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DeviceApi(config);
-            var registryId = "registryId_example";  // string | Registry ID
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
+            var registryId = "registryId_example";  // string | Registry ID
             var deviceId = "deviceId_example";  // string | Device ID
 
             try
             {
-                Device result = apiInstance.GetDevice(registryId, subscriptionId, deviceId);
+                Device result = apiInstance.GetDevice(subscriptionId, registryId, deviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -700,7 +700,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Device> response = apiInstance.GetDeviceWithHttpInfo(registryId, subscriptionId, deviceId);
+    ApiResponse<Device> response = apiInstance.GetDeviceWithHttpInfo(subscriptionId, registryId, deviceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -717,8 +717,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **registryId** | **string** | Registry ID |  |
 | **subscriptionId** | **string** | Subscription ID |  |
+| **registryId** | **string** | Registry ID |  |
 | **deviceId** | **string** | Device ID |  |
 
 ### Return type
@@ -747,7 +747,7 @@ catch (ApiException e)
 
 <a name="getdevices"></a>
 # **GetDevices**
-> ListDevicesResponse GetDevices (string registryId, string subscriptionId, int? pageNumber = null, int? pageSize = null, string fieldMask = null, List<string> deviceIds = null, List<string> deviceNumIds = null, string gatewayListOptionsAssociationsDeviceId = null, string gatewayListOptionsAssociationsGatewayId = null, string gatewayListOptionsGatewayType = null)
+> ListDevicesResponse GetDevices (string subscriptionId, string registryId, int? pageNumber = null, int? pageSize = null, string fieldMask = null, List<string> deviceIds = null, List<string> deviceNumIds = null, string gatewayListOptionsAssociationsDeviceId = null, string gatewayListOptionsAssociationsGatewayId = null, string gatewayListOptionsGatewayType = null)
 
 
 
@@ -777,8 +777,8 @@ namespace Example
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new DeviceApi(config);
-            var registryId = "registryId_example";  // string | Registry ID
             var subscriptionId = "subscriptionId_example";  // string | Subscription ID
+            var registryId = "registryId_example";  // string | Registry ID
             var pageNumber = 56;  // int? | Page Number (optional) 
             var pageSize = 56;  // int? | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional) 
             var fieldMask = "fieldMask_example";  // string | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional) 
@@ -790,7 +790,7 @@ namespace Example
 
             try
             {
-                ListDevicesResponse result = apiInstance.GetDevices(registryId, subscriptionId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
+                ListDevicesResponse result = apiInstance.GetDevices(subscriptionId, registryId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -810,7 +810,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<ListDevicesResponse> response = apiInstance.GetDevicesWithHttpInfo(registryId, subscriptionId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
+    ApiResponse<ListDevicesResponse> response = apiInstance.GetDevicesWithHttpInfo(subscriptionId, registryId, pageNumber, pageSize, fieldMask, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -827,8 +827,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **registryId** | **string** | Registry ID |  |
 | **subscriptionId** | **string** | Subscription ID |  |
+| **registryId** | **string** | Registry ID |  |
 | **pageNumber** | **int?** | Page Number | [optional]  |
 | **pageSize** | **int?** | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  | [optional]  |
 | **fieldMask** | **string** | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  | [optional]  |
