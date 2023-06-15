@@ -51,13 +51,12 @@ namespace OmniCore.Model
         /// <param name="httpConfig">httpConfig.</param>
         /// <param name="mqttConfig">mqttConfig.</param>
         /// <param name="logLevel">logLevel.</param>
-        /// <param name="isNatsRoute">isNatsRoute.</param>
         /// <param name="eventNotificationConfigs">eventNotificationConfigs.</param>
         /// <param name="logNotificationConfig">logNotificationConfig.</param>
         /// <param name="stateNotificationConfig">stateNotificationConfig.</param>
         /// <param name="customOnboardNotificationConfig">customOnboardNotificationConfig.</param>
         /// <param name="customOnboardEnabled">customOnboardEnabled.</param>
-        public DeviceRegistry(string id = default(string), List<RegistryCredential> credentials = default(List<RegistryCredential>), HttpConfig httpConfig = default(HttpConfig), MqttConfig mqttConfig = default(MqttConfig), LogLevel? logLevel = default(LogLevel?), bool isNatsRoute = default(bool), List<EventNotificationConfig> eventNotificationConfigs = default(List<EventNotificationConfig>), NotificationConfig logNotificationConfig = default(NotificationConfig), NotificationConfig stateNotificationConfig = default(NotificationConfig), NotificationConfig customOnboardNotificationConfig = default(NotificationConfig), bool customOnboardEnabled = default(bool))
+        public DeviceRegistry(string id = default(string), List<RegistryCredential> credentials = default(List<RegistryCredential>), HttpConfig httpConfig = default(HttpConfig), MqttConfig mqttConfig = default(MqttConfig), LogLevel? logLevel = default(LogLevel?), List<EventNotificationConfig> eventNotificationConfigs = default(List<EventNotificationConfig>), NotificationConfig logNotificationConfig = default(NotificationConfig), NotificationConfig stateNotificationConfig = default(NotificationConfig), NotificationConfig customOnboardNotificationConfig = default(NotificationConfig), bool customOnboardEnabled = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -69,7 +68,6 @@ namespace OmniCore.Model
             this.HttpConfig = httpConfig;
             this.MqttConfig = mqttConfig;
             this.LogLevel = logLevel;
-            this.IsNatsRoute = isNatsRoute;
             this.EventNotificationConfigs = eventNotificationConfigs;
             this.LogNotificationConfig = logNotificationConfig;
             this.StateNotificationConfig = stateNotificationConfig;
@@ -158,12 +156,6 @@ namespace OmniCore.Model
         public MqttConfig MqttConfig { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsNatsRoute
-        /// </summary>
-        [DataMember(Name = "isNatsRoute", EmitDefaultValue = true)]
-        public bool IsNatsRoute { get; set; }
-
-        /// <summary>
         /// Gets or Sets EventNotificationConfigs
         /// </summary>
         [DataMember(Name = "eventNotificationConfigs", EmitDefaultValue = false)]
@@ -238,7 +230,6 @@ namespace OmniCore.Model
             sb.Append("  HttpConfig: ").Append(HttpConfig).Append("\n");
             sb.Append("  MqttConfig: ").Append(MqttConfig).Append("\n");
             sb.Append("  LogLevel: ").Append(LogLevel).Append("\n");
-            sb.Append("  IsNatsRoute: ").Append(IsNatsRoute).Append("\n");
             sb.Append("  EventNotificationConfigs: ").Append(EventNotificationConfigs).Append("\n");
             sb.Append("  LogNotificationConfig: ").Append(LogNotificationConfig).Append("\n");
             sb.Append("  StateNotificationConfig: ").Append(StateNotificationConfig).Append("\n");
@@ -327,10 +318,6 @@ namespace OmniCore.Model
                     this.LogLevel.Equals(input.LogLevel)
                 ) && 
                 (
-                    this.IsNatsRoute == input.IsNatsRoute ||
-                    this.IsNatsRoute.Equals(input.IsNatsRoute)
-                ) && 
-                (
                     this.EventNotificationConfigs == input.EventNotificationConfigs ||
                     this.EventNotificationConfigs != null &&
                     input.EventNotificationConfigs != null &&
@@ -407,7 +394,6 @@ namespace OmniCore.Model
                     hashCode = (hashCode * 59) + this.MqttConfig.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.LogLevel.GetHashCode();
-                hashCode = (hashCode * 59) + this.IsNatsRoute.GetHashCode();
                 if (this.EventNotificationConfigs != null)
                 {
                     hashCode = (hashCode * 59) + this.EventNotificationConfigs.GetHashCode();
