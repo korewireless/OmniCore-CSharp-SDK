@@ -148,8 +148,8 @@ namespace OmniCore.Api
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Info</returns>
-        Info DeleteDevice(string subscriptionId, string registryId, string deviceId, int operationIndex = 0);
+        /// <returns>Object</returns>
+        Object DeleteDevice(string subscriptionId, string registryId, string deviceId, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -162,8 +162,8 @@ namespace OmniCore.Api
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Info</returns>
-        ApiResponse<Info> DeleteDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, int operationIndex = 0);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> DeleteDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -601,8 +601,8 @@ namespace OmniCore.Api
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Info</returns>
-        System.Threading.Tasks.Task<Info> DeleteDeviceAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> DeleteDeviceAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -616,8 +616,8 @@ namespace OmniCore.Api
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Info)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Info>> DeleteDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1898,10 +1898,10 @@ namespace OmniCore.Api
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Info</returns>
-        public Info DeleteDevice(string subscriptionId, string registryId, string deviceId, int operationIndex = 0)
+        /// <returns>Object</returns>
+        public Object DeleteDevice(string subscriptionId, string registryId, string deviceId, int operationIndex = 0)
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = DeleteDeviceWithHttpInfo(subscriptionId, registryId, deviceId);
+            OmniCore.Client.ApiResponse<Object> localVarResponse = DeleteDeviceWithHttpInfo(subscriptionId, registryId, deviceId);
             return localVarResponse.Data;
         }
 
@@ -1913,8 +1913,8 @@ namespace OmniCore.Api
         /// <param name="registryId">Registry ID</param>
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Info</returns>
-        public OmniCore.Client.ApiResponse<Info> DeleteDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, int operationIndex = 0)
+        /// <returns>ApiResponse of Object</returns>
+        public OmniCore.Client.ApiResponse<Object> DeleteDeviceWithHttpInfo(string subscriptionId, string registryId, string deviceId, int operationIndex = 0)
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -1976,7 +1976,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteDevice", localVarResponse);
@@ -1998,10 +1998,10 @@ namespace OmniCore.Api
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Info</returns>
-        public async System.Threading.Tasks.Task<Info> DeleteDeviceAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> DeleteDeviceAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            OmniCore.Client.ApiResponse<Info> localVarResponse = await DeleteDeviceWithHttpInfoAsync(subscriptionId, registryId, deviceId, operationIndex, cancellationToken).ConfigureAwait(false);
+            OmniCore.Client.ApiResponse<Object> localVarResponse = await DeleteDeviceWithHttpInfoAsync(subscriptionId, registryId, deviceId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2014,8 +2014,8 @@ namespace OmniCore.Api
         /// <param name="deviceId">Device ID</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Info)</returns>
-        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Info>> DeleteDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<OmniCore.Client.ApiResponse<Object>> DeleteDeviceWithHttpInfoAsync(string subscriptionId, string registryId, string deviceId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'subscriptionId' is set
             if (subscriptionId == null)
@@ -2078,7 +2078,7 @@ namespace OmniCore.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Info>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

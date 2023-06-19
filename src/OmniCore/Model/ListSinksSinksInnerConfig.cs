@@ -27,26 +27,25 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// NotificationConfig
+    /// ListSinksSinksInnerConfig
     /// </summary>
-    [DataContract(Name = "NotificationConfig")]
-    public partial class NotificationConfig : IEquatable<NotificationConfig>, IValidatableObject
+    [DataContract(Name = "ListSinks_sinks_inner_config")]
+    public partial class ListSinksSinksInnerConfig : IEquatable<ListSinksSinksInnerConfig>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationConfig" /> class.
+        /// Initializes a new instance of the <see cref="ListSinksSinksInnerConfig" /> class.
         /// </summary>
-        /// <param name="pubsubTopicName">PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;..</param>
-        public NotificationConfig(string pubsubTopicName = default(string))
+        /// <param name="connectionParameter">connectionParameter.</param>
+        public ListSinksSinksInnerConfig(string connectionParameter = default(string))
         {
-            this.PubsubTopicName = pubsubTopicName;
+            this.ConnectionParameter = connectionParameter;
         }
 
         /// <summary>
-        /// PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.
+        /// Gets or Sets ConnectionParameter
         /// </summary>
-        /// <value>PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.</value>
-        [DataMember(Name = "pubsubTopicName", EmitDefaultValue = false)]
-        public string PubsubTopicName { get; set; }
+        [DataMember(Name = "connectionParameter", EmitDefaultValue = false)]
+        public string ConnectionParameter { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,8 +54,8 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class NotificationConfig {\n");
-            sb.Append("  PubsubTopicName: ").Append(PubsubTopicName).Append("\n");
+            sb.Append("class ListSinksSinksInnerConfig {\n");
+            sb.Append("  ConnectionParameter: ").Append(ConnectionParameter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,15 +76,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NotificationConfig);
+            return this.Equals(input as ListSinksSinksInnerConfig);
         }
 
         /// <summary>
-        /// Returns true if NotificationConfig instances are equal
+        /// Returns true if ListSinksSinksInnerConfig instances are equal
         /// </summary>
-        /// <param name="input">Instance of NotificationConfig to be compared</param>
+        /// <param name="input">Instance of ListSinksSinksInnerConfig to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NotificationConfig input)
+        public bool Equals(ListSinksSinksInnerConfig input)
         {
             if (input == null)
             {
@@ -93,9 +92,9 @@ namespace OmniCore.Model
             }
             return 
                 (
-                    this.PubsubTopicName == input.PubsubTopicName ||
-                    (this.PubsubTopicName != null &&
-                    this.PubsubTopicName.Equals(input.PubsubTopicName))
+                    this.ConnectionParameter == input.ConnectionParameter ||
+                    (this.ConnectionParameter != null &&
+                    this.ConnectionParameter.Equals(input.ConnectionParameter))
                 );
         }
 
@@ -108,9 +107,9 @@ namespace OmniCore.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PubsubTopicName != null)
+                if (this.ConnectionParameter != null)
                 {
-                    hashCode = (hashCode * 59) + this.PubsubTopicName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ConnectionParameter.GetHashCode();
                 }
                 return hashCode;
             }

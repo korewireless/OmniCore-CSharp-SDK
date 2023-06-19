@@ -27,26 +27,25 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// NotificationConfig
+    /// ListSinks
     /// </summary>
-    [DataContract(Name = "NotificationConfig")]
-    public partial class NotificationConfig : IEquatable<NotificationConfig>, IValidatableObject
+    [DataContract(Name = "ListSinks")]
+    public partial class ListSinks : IEquatable<ListSinks>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NotificationConfig" /> class.
+        /// Initializes a new instance of the <see cref="ListSinks" /> class.
         /// </summary>
-        /// <param name="pubsubTopicName">PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;..</param>
-        public NotificationConfig(string pubsubTopicName = default(string))
+        /// <param name="sinks">sinks.</param>
+        public ListSinks(List<ListSinksSinksInner> sinks = default(List<ListSinksSinksInner>))
         {
-            this.PubsubTopicName = pubsubTopicName;
+            this.Sinks = sinks;
         }
 
         /// <summary>
-        /// PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.
+        /// Gets or Sets Sinks
         /// </summary>
-        /// <value>PubsubTopicName: A Topic name. For example, &#x60;projects/myProject/topics/deviceEvents&#x60;.</value>
-        [DataMember(Name = "pubsubTopicName", EmitDefaultValue = false)]
-        public string PubsubTopicName { get; set; }
+        [DataMember(Name = "sinks", EmitDefaultValue = false)]
+        public List<ListSinksSinksInner> Sinks { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,8 +54,8 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class NotificationConfig {\n");
-            sb.Append("  PubsubTopicName: ").Append(PubsubTopicName).Append("\n");
+            sb.Append("class ListSinks {\n");
+            sb.Append("  Sinks: ").Append(Sinks).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -77,15 +76,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as NotificationConfig);
+            return this.Equals(input as ListSinks);
         }
 
         /// <summary>
-        /// Returns true if NotificationConfig instances are equal
+        /// Returns true if ListSinks instances are equal
         /// </summary>
-        /// <param name="input">Instance of NotificationConfig to be compared</param>
+        /// <param name="input">Instance of ListSinks to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NotificationConfig input)
+        public bool Equals(ListSinks input)
         {
             if (input == null)
             {
@@ -93,9 +92,10 @@ namespace OmniCore.Model
             }
             return 
                 (
-                    this.PubsubTopicName == input.PubsubTopicName ||
-                    (this.PubsubTopicName != null &&
-                    this.PubsubTopicName.Equals(input.PubsubTopicName))
+                    this.Sinks == input.Sinks ||
+                    this.Sinks != null &&
+                    input.Sinks != null &&
+                    this.Sinks.SequenceEqual(input.Sinks)
                 );
         }
 
@@ -108,9 +108,9 @@ namespace OmniCore.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PubsubTopicName != null)
+                if (this.Sinks != null)
                 {
-                    hashCode = (hashCode * 59) + this.PubsubTopicName.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Sinks.GetHashCode();
                 }
                 return hashCode;
             }

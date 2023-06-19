@@ -123,7 +123,7 @@ namespace OmniCore.Test.Api
             //string registryId = null;
             //string deviceId = null;
             //var response = instance.DeleteDevice(subscriptionId, registryId, deviceId);
-            //Assert.IsType<Info>(response);
+            //Assert.IsType<Object>(response);
         }
 
         /// <summary>

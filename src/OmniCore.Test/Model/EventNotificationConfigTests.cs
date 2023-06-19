@@ -66,14 +66,6 @@ namespace OmniCore.Test.Model
             // TODO unit test for the property 'PubsubTopicName'
         }
         /// <summary>
-        /// Test the property 'IsGcpPubSub'
-        /// </summary>
-        [Fact]
-        public void IsGcpPubSubTest()
-        {
-            // TODO unit test for the property 'IsGcpPubSub'
-        }
-        /// <summary>
         /// Test the property 'SubfolderMatches'
         /// </summary>
         [Fact]

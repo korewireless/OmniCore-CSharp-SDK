@@ -130,6 +130,14 @@ namespace OmniCore.Test.Model
             // TODO unit test for the property 'LogLevel'
         }
         /// <summary>
+        /// Test the property 'IsNatsRoute'
+        /// </summary>
+        [Fact]
+        public void IsNatsRouteTest()
+        {
+            // TODO unit test for the property 'IsNatsRoute'
+        }
+        /// <summary>
         /// Test the property 'EventNotificationConfigs'
         /// </summary>
         [Fact]

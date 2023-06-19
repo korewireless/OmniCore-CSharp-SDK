@@ -436,7 +436,7 @@ catch (ApiException e)
 
 <a name="deletedevice"></a>
 # **DeleteDevice**
-> Info DeleteDevice (string subscriptionId, string registryId, string deviceId)
+> Object DeleteDevice (string subscriptionId, string registryId, string deviceId)
 
 
 
@@ -472,7 +472,7 @@ namespace Example
 
             try
             {
-                Info result = apiInstance.DeleteDevice(subscriptionId, registryId, deviceId);
+                Object result = apiInstance.DeleteDevice(subscriptionId, registryId, deviceId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -492,7 +492,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<Info> response = apiInstance.DeleteDeviceWithHttpInfo(subscriptionId, registryId, deviceId);
+    ApiResponse<Object> response = apiInstance.DeleteDeviceWithHttpInfo(subscriptionId, registryId, deviceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -515,7 +515,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Info**](Info.md)
+**Object**
 
 ### Authorization
 
