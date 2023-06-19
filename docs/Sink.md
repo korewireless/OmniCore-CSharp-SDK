@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] [readonly] 
 **Subscription** | **string** |  | [optional] [readonly] 
 **_Sink** | **string** |  | [optional] 
-**Config** | [**ListSinksSinksInnerConfig**](ListSinksSinksInnerConfig.md) |  | [optional] 
+**Config** | [**Config**](Config.md) |  | [optional] 
 **Status** | **bool** |  | [optional] [readonly] 
 **Createdon** | **string** |  | [optional] [readonly] 
 **Updatedon** | **string** |  | [optional] [readonly] 

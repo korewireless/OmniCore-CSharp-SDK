@@ -27,25 +27,25 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// BlockCommunicationBody
+    /// Config
     /// </summary>
-    [DataContract(Name = "BlockCommunicationBody")]
-    public partial class BlockCommunicationBody : IEquatable<BlockCommunicationBody>, IValidatableObject
+    [DataContract(Name = "Config")]
+    public partial class Config : IEquatable<Config>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlockCommunicationBody" /> class.
+        /// Initializes a new instance of the <see cref="Config" /> class.
         /// </summary>
-        /// <param name="isblocked">isblocked.</param>
-        public BlockCommunicationBody(bool isblocked = default(bool))
+        /// <param name="connectionParameter">connectionParameter.</param>
+        public Config(string connectionParameter = default(string))
         {
-            this.Isblocked = isblocked;
+            this.ConnectionParameter = connectionParameter;
         }
 
         /// <summary>
-        /// Gets or Sets Isblocked
+        /// Gets or Sets ConnectionParameter
         /// </summary>
-        [DataMember(Name = "isblocked", EmitDefaultValue = true)]
-        public bool Isblocked { get; set; }
+        [DataMember(Name = "connectionParameter", EmitDefaultValue = false)]
+        public string ConnectionParameter { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +54,8 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BlockCommunicationBody {\n");
-            sb.Append("  Isblocked: ").Append(Isblocked).Append("\n");
+            sb.Append("class Config {\n");
+            sb.Append("  ConnectionParameter: ").Append(ConnectionParameter).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +76,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as BlockCommunicationBody);
+            return this.Equals(input as Config);
         }
 
         /// <summary>
-        /// Returns true if BlockCommunicationBody instances are equal
+        /// Returns true if Config instances are equal
         /// </summary>
-        /// <param name="input">Instance of BlockCommunicationBody to be compared</param>
+        /// <param name="input">Instance of Config to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(BlockCommunicationBody input)
+        public bool Equals(Config input)
         {
             if (input == null)
             {
@@ -92,8 +92,9 @@ namespace OmniCore.Model
             }
             return 
                 (
-                    this.Isblocked == input.Isblocked ||
-                    this.Isblocked.Equals(input.Isblocked)
+                    this.ConnectionParameter == input.ConnectionParameter ||
+                    (this.ConnectionParameter != null &&
+                    this.ConnectionParameter.Equals(input.ConnectionParameter))
                 );
         }
 
@@ -106,7 +107,10 @@ namespace OmniCore.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Isblocked.GetHashCode();
+                if (this.ConnectionParameter != null)
+                {
+                    hashCode = (hashCode * 59) + this.ConnectionParameter.GetHashCode();
+                }
                 return hashCode;
             }
         }
