@@ -1,10 +1,10 @@
 # OmniCore.Api.MetricsApi
 
-All URIs are relative to *https://api.korewireless.com/omnicore*
+All URIs are relative to *https://api.korewireless.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetMetrics**](MetricsApi.md#getmetrics) | **GET** /subscriptions/{subscriptionId}/metrics |  |
+| [**GetMetrics**](MetricsApi.md#getmetrics) | **GET** /omnicore/subscriptions/{subscriptionId}/metrics |  |
 
 <a name="getmetrics"></a>
 # **GetMetrics**
@@ -29,7 +29,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed

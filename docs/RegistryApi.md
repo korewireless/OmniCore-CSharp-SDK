@@ -1,15 +1,15 @@
 # OmniCore.Api.RegistryApi
 
-All URIs are relative to *https://api.korewireless.com/omnicore*
+All URIs are relative to *https://api.korewireless.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateRegistry**](RegistryApi.md#createregistry) | **POST** /subscriptions/{subscriptionId}/registries |  |
-| [**DeleteRegistry**](RegistryApi.md#deleteregistry) | **DELETE** /subscriptions/{subscriptionId}/registries/{registryId} |  |
-| [**GetRegistries**](RegistryApi.md#getregistries) | **GET** /subscriptions/{subscriptionId}/registries |  |
-| [**GetRegistry**](RegistryApi.md#getregistry) | **GET** /subscriptions/{subscriptionId}/registries/{registryId} |  |
-| [**SendBroadcastToDevices**](RegistryApi.md#sendbroadcasttodevices) | **POST** /subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice |  |
-| [**UpdateRegistry**](RegistryApi.md#updateregistry) | **PATCH** /subscriptions/{subscriptionId}/registries/{registryId} |  |
+| [**CreateRegistry**](RegistryApi.md#createregistry) | **POST** /omnicore/subscriptions/{subscriptionId}/registries |  |
+| [**DeleteRegistry**](RegistryApi.md#deleteregistry) | **DELETE** /omnicore/subscriptions/{subscriptionId}/registries/{registryId} |  |
+| [**GetRegistries**](RegistryApi.md#getregistries) | **GET** /omnicore/subscriptions/{subscriptionId}/registries |  |
+| [**GetRegistry**](RegistryApi.md#getregistry) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId} |  |
+| [**SendBroadcastToDevices**](RegistryApi.md#sendbroadcasttodevices) | **POST** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/sendBroadcastToDevice |  |
+| [**UpdateRegistry**](RegistryApi.md#updateregistry) | **PATCH** /omnicore/subscriptions/{subscriptionId}/registries/{registryId} |  |
 
 <a name="createregistry"></a>
 # **CreateRegistry**
@@ -34,7 +34,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -135,7 +135,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -236,7 +236,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -341,7 +341,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -442,7 +442,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -545,7 +545,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.korewireless.com/omnicore";
+            config.BasePath = "https://api.korewireless.com";
             // Configure API key authorization: apiKey
             config.AddApiKey("x-api-key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
