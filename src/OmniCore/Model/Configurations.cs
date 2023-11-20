@@ -36,7 +36,7 @@ namespace OmniCore.Model
         /// Initializes a new instance of the <see cref="Configurations" /> class.
         /// </summary>
         /// <param name="details">details.</param>
-        public Configurations(List<ModelConfiguration> details = default(List<ModelConfiguration>))
+        public Configurations(List<VaultConfiguration> details = default(List<VaultConfiguration>))
         {
             this.Details = details;
         }
@@ -45,7 +45,7 @@ namespace OmniCore.Model
         /// Gets or Sets Details
         /// </summary>
         [DataMember(Name = "Details", EmitDefaultValue = false)]
-        public List<ModelConfiguration> Details { get; set; }
+        public List<VaultConfiguration> Details { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
