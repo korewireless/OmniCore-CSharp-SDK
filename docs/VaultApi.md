@@ -5,14 +5,16 @@ All URIs are relative to *https://api.korewireless.com*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**CreateVaultConfiguration**](VaultApi.md#createvaultconfiguration) | **POST** /vault/subscriptions/{subscriptionid}/configurations |  |
+| [**CreateVaultKey**](VaultApi.md#createvaultkey) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**DeleteConfiguration**](VaultApi.md#deleteconfiguration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} |  |
-| [**EnableVault**](VaultApi.md#enablevault) | **POST** /vault/subscriptions/{subscriptionid}/enable-vault |  |
+| [**DeleteVaultKey**](VaultApi.md#deletevaultkey) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} |  |
 | [**GetExports**](VaultApi.md#getexports) | **GET** /vault/subscriptions/{subscriptionid}/exports |  |
 | [**GetRegistryData**](VaultApi.md#getregistrydata) | **GET** /vault/subscriptions/{subscriptionid}/folders |  |
 | [**GetReplays**](VaultApi.md#getreplays) | **GET** /vault/subscriptions/{subscriptionid}/replays |  |
 | [**GetVaultAudit**](VaultApi.md#getvaultaudit) | **GET** /vault/subscriptions/{subscriptionid}/audit |  |
 | [**GetVaultConfigurations**](VaultApi.md#getvaultconfigurations) | **GET** /vault/subscriptions/{subscriptionid}/configurations |  |
 | [**GetVaultFiles**](VaultApi.md#getvaultfiles) | **GET** /vault/subscriptions/{subscriptionid}/registry/{registryid}/files |  |
+| [**GetVaultKeys**](VaultApi.md#getvaultkeys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**GetVaultMetrics**](VaultApi.md#getvaultmetrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics |  |
 | [**GetVaultStatus**](VaultApi.md#getvaultstatus) | **GET** /vault/subscriptions/{subscriptionid}/status |  |
 | [**StartExport**](VaultApi.md#startexport) | **POST** /vault/subscriptions/{subscriptionid}/exports |  |
@@ -113,6 +115,107 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createvaultkey"></a>
+# **CreateVaultKey**
+> Frame CreateVaultKey (string subscriptionid, CreateVaultKeyBody createVaultKeyBody = null)
+
+
+
+Create Vault Key
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class CreateVaultKeyExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.korewireless.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new VaultApi(config);
+            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
+            var createVaultKeyBody = new CreateVaultKeyBody(); // CreateVaultKeyBody | application/json (optional) 
+
+            try
+            {
+                Frame result = apiInstance.CreateVaultKey(subscriptionid, createVaultKeyBody);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.CreateVaultKey: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateVaultKeyWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Frame> response = apiInstance.CreateVaultKeyWithHttpInfo(subscriptionid, createVaultKeyBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling VaultApi.CreateVaultKeyWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionid** | **string** | Subscription ID |  |
+| **createVaultKeyBody** | [**CreateVaultKeyBody**](CreateVaultKeyBody.md) | application/json | [optional]  |
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Internal Server Error |  -  |
@@ -220,13 +323,13 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="enablevault"></a>
-# **EnableVault**
-> Details EnableVault (string subscriptionid, EnableVault enableVault = null)
+<a name="deletevaultkey"></a>
+# **DeleteVaultKey**
+> Frame DeleteVaultKey (string subscriptionid, string keyid)
 
 
 
-Enable/Disable vault for a subscription
+Delete Vault Key
 
 ### Example
 ```csharp
@@ -238,7 +341,7 @@ using OmniCore.Model;
 
 namespace Example
 {
-    public class EnableVaultExample
+    public class DeleteVaultKeyExample
     {
         public static void Main()
         {
@@ -253,16 +356,16 @@ namespace Example
 
             var apiInstance = new VaultApi(config);
             var subscriptionid = "subscriptionid_example";  // string | Subscription ID
-            var enableVault = new EnableVault(); // EnableVault | application/json (optional) 
+            var keyid = "keyid_example";  // string | key id
 
             try
             {
-                Details result = apiInstance.EnableVault(subscriptionid, enableVault);
+                Frame result = apiInstance.DeleteVaultKey(subscriptionid, keyid);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling VaultApi.EnableVault: " + e.Message);
+                Debug.Print("Exception when calling VaultApi.DeleteVaultKey: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -271,20 +374,20 @@ namespace Example
 }
 ```
 
-#### Using the EnableVaultWithHttpInfo variant
+#### Using the DeleteVaultKeyWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<Details> response = apiInstance.EnableVaultWithHttpInfo(subscriptionid, enableVault);
+    ApiResponse<Frame> response = apiInstance.DeleteVaultKeyWithHttpInfo(subscriptionid, keyid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling VaultApi.EnableVaultWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling VaultApi.DeleteVaultKeyWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -295,11 +398,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **subscriptionid** | **string** | Subscription ID |  |
-| **enableVault** | [**EnableVault**](EnableVault.md) | application/json | [optional]  |
+| **keyid** | **string** | key id |  |
 
 ### Return type
 
-[**Details**](Details.md)
+[**Frame**](Frame.md)
 
 ### Authorization
 
@@ -307,7 +410,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -902,6 +1005,105 @@ catch (ApiException e)
 ### Return type
 
 [**FileDetails**](FileDetails.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getvaultkeys"></a>
+# **GetVaultKeys**
+> GetKeysResponse GetVaultKeys (string subscriptionid)
+
+
+
+Get Vault Keys
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class GetVaultKeysExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.korewireless.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new VaultApi(config);
+            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
+
+            try
+            {
+                GetKeysResponse result = apiInstance.GetVaultKeys(subscriptionid);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.GetVaultKeys: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetVaultKeysWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<GetKeysResponse> response = apiInstance.GetVaultKeysWithHttpInfo(subscriptionid);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling VaultApi.GetVaultKeysWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionid** | **string** | Subscription ID |  |
+
+### Return type
+
+[**GetKeysResponse**](GetKeysResponse.md)
 
 ### Authorization
 
