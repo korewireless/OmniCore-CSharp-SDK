@@ -39,14 +39,18 @@ namespace OmniCore.Model
         /// <param name="noOfFiles">noOfFiles.</param>
         /// <param name="fileSize">fileSize.</param>
         /// <param name="noofoperations">noofoperations.</param>
+        /// <param name="noOfReplays">noOfReplays.</param>
+        /// <param name="noOfExports">noOfExports.</param>
         /// <param name="operations">operations.</param>
         /// <param name="detailsForTimePeriod">detailsForTimePeriod.</param>
-        public MetricsResponseDetails(string subscriptionId = default(string), int noOfFiles = default(int), decimal fileSize = default(decimal), int noofoperations = default(int), List<OperationMetrics> operations = default(List<OperationMetrics>), List<MetricsData> detailsForTimePeriod = default(List<MetricsData>))
+        public MetricsResponseDetails(string subscriptionId = default(string), int noOfFiles = default(int), decimal fileSize = default(decimal), int noofoperations = default(int), decimal noOfReplays = default(decimal), decimal noOfExports = default(decimal), List<OperationMetrics> operations = default(List<OperationMetrics>), MetricsData detailsForTimePeriod = default(MetricsData))
         {
             this.SubscriptionId = subscriptionId;
             this.NoOfFiles = noOfFiles;
             this.FileSize = fileSize;
             this.Noofoperations = noofoperations;
+            this.NoOfReplays = noOfReplays;
+            this.NoOfExports = noOfExports;
             this.Operations = operations;
             this.DetailsForTimePeriod = detailsForTimePeriod;
         }
@@ -76,6 +80,18 @@ namespace OmniCore.Model
         public int Noofoperations { get; set; }
 
         /// <summary>
+        /// Gets or Sets NoOfReplays
+        /// </summary>
+        [DataMember(Name = "noOfReplays", EmitDefaultValue = false)]
+        public decimal NoOfReplays { get; set; }
+
+        /// <summary>
+        /// Gets or Sets NoOfExports
+        /// </summary>
+        [DataMember(Name = "noOfExports", EmitDefaultValue = false)]
+        public decimal NoOfExports { get; set; }
+
+        /// <summary>
         /// Gets or Sets Operations
         /// </summary>
         [DataMember(Name = "Operations", EmitDefaultValue = false)]
@@ -85,7 +101,7 @@ namespace OmniCore.Model
         /// Gets or Sets DetailsForTimePeriod
         /// </summary>
         [DataMember(Name = "detailsForTimePeriod", EmitDefaultValue = false)]
-        public List<MetricsData> DetailsForTimePeriod { get; set; }
+        public MetricsData DetailsForTimePeriod { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -99,6 +115,8 @@ namespace OmniCore.Model
             sb.Append("  NoOfFiles: ").Append(NoOfFiles).Append("\n");
             sb.Append("  FileSize: ").Append(FileSize).Append("\n");
             sb.Append("  Noofoperations: ").Append(Noofoperations).Append("\n");
+            sb.Append("  NoOfReplays: ").Append(NoOfReplays).Append("\n");
+            sb.Append("  NoOfExports: ").Append(NoOfExports).Append("\n");
             sb.Append("  Operations: ").Append(Operations).Append("\n");
             sb.Append("  DetailsForTimePeriod: ").Append(DetailsForTimePeriod).Append("\n");
             sb.Append("}\n");
@@ -154,6 +172,14 @@ namespace OmniCore.Model
                     this.Noofoperations.Equals(input.Noofoperations)
                 ) && 
                 (
+                    this.NoOfReplays == input.NoOfReplays ||
+                    this.NoOfReplays.Equals(input.NoOfReplays)
+                ) && 
+                (
+                    this.NoOfExports == input.NoOfExports ||
+                    this.NoOfExports.Equals(input.NoOfExports)
+                ) && 
+                (
                     this.Operations == input.Operations ||
                     this.Operations != null &&
                     input.Operations != null &&
@@ -161,9 +187,8 @@ namespace OmniCore.Model
                 ) && 
                 (
                     this.DetailsForTimePeriod == input.DetailsForTimePeriod ||
-                    this.DetailsForTimePeriod != null &&
-                    input.DetailsForTimePeriod != null &&
-                    this.DetailsForTimePeriod.SequenceEqual(input.DetailsForTimePeriod)
+                    (this.DetailsForTimePeriod != null &&
+                    this.DetailsForTimePeriod.Equals(input.DetailsForTimePeriod))
                 );
         }
 
@@ -183,6 +208,8 @@ namespace OmniCore.Model
                 hashCode = (hashCode * 59) + this.NoOfFiles.GetHashCode();
                 hashCode = (hashCode * 59) + this.FileSize.GetHashCode();
                 hashCode = (hashCode * 59) + this.Noofoperations.GetHashCode();
+                hashCode = (hashCode * 59) + this.NoOfReplays.GetHashCode();
+                hashCode = (hashCode * 59) + this.NoOfExports.GetHashCode();
                 if (this.Operations != null)
                 {
                     hashCode = (hashCode * 59) + this.Operations.GetHashCode();

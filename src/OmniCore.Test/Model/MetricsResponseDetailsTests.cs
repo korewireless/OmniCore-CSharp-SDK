@@ -90,6 +90,22 @@ namespace OmniCore.Test.Model
             // TODO unit test for the property 'Noofoperations'
         }
         /// <summary>
+        /// Test the property 'NoOfReplays'
+        /// </summary>
+        [Fact]
+        public void NoOfReplaysTest()
+        {
+            // TODO unit test for the property 'NoOfReplays'
+        }
+        /// <summary>
+        /// Test the property 'NoOfExports'
+        /// </summary>
+        [Fact]
+        public void NoOfExportsTest()
+        {
+            // TODO unit test for the property 'NoOfExports'
+        }
+        /// <summary>
         /// Test the property 'Operations'
         /// </summary>
         [Fact]
