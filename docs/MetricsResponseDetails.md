@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **NoOfFiles** | **int** |  | [optional] 
 **FileSize** | **decimal** |  | [optional] 
 **Noofoperations** | **int** |  | [optional] 
-**NoOfReplays** | **decimal** |  | [optional] 
-**NoOfExports** | **decimal** |  | [optional] 
+**NoOfReplays** | **int** |  | [optional] 
+**NoOfExports** | **int** |  | [optional] 
 **Operations** | [**List&lt;OperationMetrics&gt;**](OperationMetrics.md) |  | [optional] 
 **DetailsForTimePeriod** | [**MetricsData**](MetricsData.md) |  | [optional] 
 
