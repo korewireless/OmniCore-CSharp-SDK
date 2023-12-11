@@ -8,6 +8,7 @@ All URIs are relative to *https://api.korewireless.com*
 | [**CreateVaultKey**](VaultApi.md#createvaultkey) | **POST** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**DeleteConfiguration**](VaultApi.md#deleteconfiguration) | **DELETE** /vault/subscriptions/{subscriptionid}/configurations/{configid} |  |
 | [**DeleteVaultKey**](VaultApi.md#deletevaultkey) | **DELETE** /vault/subscriptions/{subscriptionid}/encryptionkeys/{keyid} |  |
+| [**EnableEncryption**](VaultApi.md#enableencryption) | **POST** /vault/subscriptions/{subscriptionid}/encryption |  |
 | [**GetExports**](VaultApi.md#getexports) | **GET** /vault/subscriptions/{subscriptionid}/exports |  |
 | [**GetRegistryData**](VaultApi.md#getregistrydata) | **GET** /vault/subscriptions/{subscriptionid}/folders |  |
 | [**GetReplays**](VaultApi.md#getreplays) | **GET** /vault/subscriptions/{subscriptionid}/replays |  |
@@ -17,6 +18,7 @@ All URIs are relative to *https://api.korewireless.com*
 | [**GetVaultKeys**](VaultApi.md#getvaultkeys) | **GET** /vault/subscriptions/{subscriptionid}/encryptionkeys |  |
 | [**GetVaultMetrics**](VaultApi.md#getvaultmetrics) | **GET** /vault/subscriptions/{subscriptionid}/metrics |  |
 | [**GetVaultStatus**](VaultApi.md#getvaultstatus) | **GET** /vault/subscriptions/{subscriptionid}/status |  |
+| [**SetRetention**](VaultApi.md#setretention) | **POST** /vault/subscriptions/{subscriptionid}/retention |  |
 | [**StartExport**](VaultApi.md#startexport) | **POST** /vault/subscriptions/{subscriptionid}/exports |  |
 | [**StartReplay**](VaultApi.md#startreplay) | **POST** /vault/subscriptions/{subscriptionid}/replays |  |
 
@@ -411,6 +413,107 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="enableencryption"></a>
+# **EnableEncryption**
+> Frame EnableEncryption (string subscriptionid, EnableEncryptionBody enableEncryptionBody = null)
+
+
+
+Enable Encryption
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class EnableEncryptionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.korewireless.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new VaultApi(config);
+            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
+            var enableEncryptionBody = new EnableEncryptionBody(); // EnableEncryptionBody | application/json (optional) 
+
+            try
+            {
+                Frame result = apiInstance.EnableEncryption(subscriptionid, enableEncryptionBody);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.EnableEncryption: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EnableEncryptionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Frame> response = apiInstance.EnableEncryptionWithHttpInfo(subscriptionid, enableEncryptionBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling VaultApi.EnableEncryptionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionid** | **string** | Subscription ID |  |
+| **enableEncryptionBody** | [**EnableEncryptionBody**](EnableEncryptionBody.md) | application/json | [optional]  |
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -1314,6 +1417,107 @@ catch (ApiException e)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="setretention"></a>
+# **SetRetention**
+> Frame SetRetention (string subscriptionid, SetRetentionBody setRetentionBody = null)
+
+
+
+Set Retention Period
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class SetRetentionExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.korewireless.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new VaultApi(config);
+            var subscriptionid = "subscriptionid_example";  // string | Subscription ID
+            var setRetentionBody = new SetRetentionBody(); // SetRetentionBody | application/json (optional) 
+
+            try
+            {
+                Frame result = apiInstance.SetRetention(subscriptionid, setRetentionBody);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling VaultApi.SetRetention: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SetRetentionWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Frame> response = apiInstance.SetRetentionWithHttpInfo(subscriptionid, setRetentionBody);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling VaultApi.SetRetentionWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionid** | **string** | Subscription ID |  |
+| **setRetentionBody** | [**SetRetentionBody**](SetRetentionBody.md) | application/json | [optional]  |
+
+### Return type
+
+[**Frame**](Frame.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

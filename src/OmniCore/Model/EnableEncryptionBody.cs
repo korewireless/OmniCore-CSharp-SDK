@@ -27,25 +27,41 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// Config
+    /// EnableEncryptionBody
     /// </summary>
-    [DataContract(Name = "Config")]
-    public partial class Config : IEquatable<Config>, IValidatableObject
+    [DataContract(Name = "EnableEncryptionBody")]
+    public partial class EnableEncryptionBody : IEquatable<EnableEncryptionBody>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Config" /> class.
+        /// Initializes a new instance of the <see cref="EnableEncryptionBody" /> class.
         /// </summary>
-        /// <param name="connectionParameter">connectionParameter.</param>
-        public Config(string connectionParameter = default(string))
+        /// <param name="action">action.</param>
+        /// <param name="isEncrypted">isEncrypted.</param>
+        /// <param name="encryptionKeyId">encryptionKeyId.</param>
+        public EnableEncryptionBody(string action = default(string), bool isEncrypted = default(bool), int encryptionKeyId = default(int))
         {
-            this.ConnectionParameter = connectionParameter;
+            this.Action = action;
+            this.IsEncrypted = isEncrypted;
+            this.EncryptionKeyId = encryptionKeyId;
         }
 
         /// <summary>
-        /// Gets or Sets ConnectionParameter
+        /// Gets or Sets Action
         /// </summary>
-        [DataMember(Name = "connectionParameter", EmitDefaultValue = false)]
-        public string ConnectionParameter { get; set; }
+        [DataMember(Name = "action", EmitDefaultValue = false)]
+        public string Action { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsEncrypted
+        /// </summary>
+        [DataMember(Name = "isEncrypted", EmitDefaultValue = true)]
+        public bool IsEncrypted { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EncryptionKeyId
+        /// </summary>
+        [DataMember(Name = "encryptionKeyId", EmitDefaultValue = false)]
+        public int EncryptionKeyId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +70,10 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Config {\n");
-            sb.Append("  ConnectionParameter: ").Append(ConnectionParameter).Append("\n");
+            sb.Append("class EnableEncryptionBody {\n");
+            sb.Append("  Action: ").Append(Action).Append("\n");
+            sb.Append("  IsEncrypted: ").Append(IsEncrypted).Append("\n");
+            sb.Append("  EncryptionKeyId: ").Append(EncryptionKeyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +94,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Config);
+            return this.Equals(input as EnableEncryptionBody);
         }
 
         /// <summary>
-        /// Returns true if Config instances are equal
+        /// Returns true if EnableEncryptionBody instances are equal
         /// </summary>
-        /// <param name="input">Instance of Config to be compared</param>
+        /// <param name="input">Instance of EnableEncryptionBody to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Config input)
+        public bool Equals(EnableEncryptionBody input)
         {
             if (input == null)
             {
@@ -92,9 +110,17 @@ namespace OmniCore.Model
             }
             return 
                 (
-                    this.ConnectionParameter == input.ConnectionParameter ||
-                    (this.ConnectionParameter != null &&
-                    this.ConnectionParameter.Equals(input.ConnectionParameter))
+                    this.Action == input.Action ||
+                    (this.Action != null &&
+                    this.Action.Equals(input.Action))
+                ) && 
+                (
+                    this.IsEncrypted == input.IsEncrypted ||
+                    this.IsEncrypted.Equals(input.IsEncrypted)
+                ) && 
+                (
+                    this.EncryptionKeyId == input.EncryptionKeyId ||
+                    this.EncryptionKeyId.Equals(input.EncryptionKeyId)
                 );
         }
 
@@ -107,10 +133,12 @@ namespace OmniCore.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ConnectionParameter != null)
+                if (this.Action != null)
                 {
-                    hashCode = (hashCode * 59) + this.ConnectionParameter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Action.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.IsEncrypted.GetHashCode();
+                hashCode = (hashCode * 59) + this.EncryptionKeyId.GetHashCode();
                 return hashCode;
             }
         }

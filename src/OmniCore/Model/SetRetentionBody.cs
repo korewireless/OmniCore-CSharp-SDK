@@ -27,25 +27,25 @@ using OpenAPIDateConverter = OmniCore.Client.OpenAPIDateConverter;
 namespace OmniCore.Model
 {
     /// <summary>
-    /// Config
+    /// SetRetentionBody
     /// </summary>
-    [DataContract(Name = "Config")]
-    public partial class Config : IEquatable<Config>, IValidatableObject
+    [DataContract(Name = "SetRetentionBody")]
+    public partial class SetRetentionBody : IEquatable<SetRetentionBody>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Config" /> class.
+        /// Initializes a new instance of the <see cref="SetRetentionBody" /> class.
         /// </summary>
-        /// <param name="connectionParameter">connectionParameter.</param>
-        public Config(string connectionParameter = default(string))
+        /// <param name="retentionPeriod">retentionPeriod.</param>
+        public SetRetentionBody(string retentionPeriod = default(string))
         {
-            this.ConnectionParameter = connectionParameter;
+            this.RetentionPeriod = retentionPeriod;
         }
 
         /// <summary>
-        /// Gets or Sets ConnectionParameter
+        /// Gets or Sets RetentionPeriod
         /// </summary>
-        [DataMember(Name = "connectionParameter", EmitDefaultValue = false)]
-        public string ConnectionParameter { get; set; }
+        [DataMember(Name = "retentionPeriod", EmitDefaultValue = false)]
+        public string RetentionPeriod { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +54,8 @@ namespace OmniCore.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Config {\n");
-            sb.Append("  ConnectionParameter: ").Append(ConnectionParameter).Append("\n");
+            sb.Append("class SetRetentionBody {\n");
+            sb.Append("  RetentionPeriod: ").Append(RetentionPeriod).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +76,15 @@ namespace OmniCore.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Config);
+            return this.Equals(input as SetRetentionBody);
         }
 
         /// <summary>
-        /// Returns true if Config instances are equal
+        /// Returns true if SetRetentionBody instances are equal
         /// </summary>
-        /// <param name="input">Instance of Config to be compared</param>
+        /// <param name="input">Instance of SetRetentionBody to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Config input)
+        public bool Equals(SetRetentionBody input)
         {
             if (input == null)
             {
@@ -92,9 +92,9 @@ namespace OmniCore.Model
             }
             return 
                 (
-                    this.ConnectionParameter == input.ConnectionParameter ||
-                    (this.ConnectionParameter != null &&
-                    this.ConnectionParameter.Equals(input.ConnectionParameter))
+                    this.RetentionPeriod == input.RetentionPeriod ||
+                    (this.RetentionPeriod != null &&
+                    this.RetentionPeriod.Equals(input.RetentionPeriod))
                 );
         }
 
@@ -107,9 +107,9 @@ namespace OmniCore.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ConnectionParameter != null)
+                if (this.RetentionPeriod != null)
                 {
-                    hashCode = (hashCode * 59) + this.ConnectionParameter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.RetentionPeriod.GetHashCode();
                 }
                 return hashCode;
             }
