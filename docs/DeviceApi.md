@@ -13,6 +13,7 @@ All URIs are relative to *https://api.korewireless.com*
 | [**GetDevice**](DeviceApi.md#getdevice) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices/{deviceId} |  |
 | [**GetDevices**](DeviceApi.md#getdevices) | **GET** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/devices |  |
 | [**GetStates**](DeviceApi.md#getstates) | **GET** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/states |  |
+| [**GetSubscriptionDevices**](DeviceApi.md#getsubscriptiondevices) | **GET** /omnicore/subscriptions/{subscriptionId}/devices |  |
 | [**SendCommandToDevice**](DeviceApi.md#sendcommandtodevice) | **POST** /omnicore/subscriptions/{subscriptionid}/registries/{registryId}/devices/{deviceId}/sendCommandToDevice |  |
 | [**UnBindDevice**](DeviceApi.md#unbinddevice) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDeviceFromGateway |  |
 | [**UnBindDevices**](DeviceApi.md#unbinddevices) | **POST** /omnicore/subscriptions/{subscriptionId}/registries/{registryId}/unbindDevicesFromGateway |  |
@@ -946,6 +947,123 @@ catch (ApiException e)
 ### Return type
 
 [**ListDeviceStatesResponse**](ListDeviceStatesResponse.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey), [bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getsubscriptiondevices"></a>
+# **GetSubscriptionDevices**
+> ListDevicesOnlineResponse GetSubscriptionDevices (string subscriptionId, int? pageNumber = null, int? pageSize = null, string fieldMask = null, bool? sortByClientOnline = null, List<string> deviceIds = null, List<string> deviceNumIds = null, string gatewayListOptionsAssociationsDeviceId = null, string gatewayListOptionsAssociationsGatewayId = null, string gatewayListOptionsGatewayType = null)
+
+
+
+Get all devices under a subscription
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using OmniCore.Api;
+using OmniCore.Client;
+using OmniCore.Model;
+
+namespace Example
+{
+    public class GetSubscriptionDevicesExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.korewireless.com";
+            // Configure API key authorization: apiKey
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            var apiInstance = new DeviceApi(config);
+            var subscriptionId = "subscriptionId_example";  // string | Subscription ID
+            var pageNumber = 56;  // int? | Page Number (optional) 
+            var pageSize = 56;  // int? | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  (optional) 
+            var fieldMask = "fieldMask_example";  // string | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  (optional) 
+            var sortByClientOnline = true;  // bool? | Set to true to return devices sorted by last heartbeat  (optional) 
+            var deviceIds = new List<string>(); // List<string> | A list of device string IDs. For example, ['device0', 'device12']. If empty, this field is ignored. Maximum IDs: 10,000 (optional) 
+            var deviceNumIds = new List<string>(); // List<string> | A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000. (optional) 
+            var gatewayListOptionsAssociationsDeviceId = "gatewayListOptionsAssociationsDeviceId_example";  // string | If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound. (optional) 
+            var gatewayListOptionsAssociationsGatewayId = "gatewayListOptionsAssociationsGatewayId_example";  // string | If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned (optional) 
+            var gatewayListOptionsGatewayType = "gatewayListOptionsGatewayType_example";  // string | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. (optional) 
+
+            try
+            {
+                ListDevicesOnlineResponse result = apiInstance.GetSubscriptionDevices(subscriptionId, pageNumber, pageSize, fieldMask, sortByClientOnline, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DeviceApi.GetSubscriptionDevices: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetSubscriptionDevicesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<ListDevicesOnlineResponse> response = apiInstance.GetSubscriptionDevicesWithHttpInfo(subscriptionId, pageNumber, pageSize, fieldMask, sortByClientOnline, deviceIds, deviceNumIds, gatewayListOptionsAssociationsDeviceId, gatewayListOptionsAssociationsGatewayId, gatewayListOptionsGatewayType);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DeviceApi.GetSubscriptionDevicesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **subscriptionId** | **string** | Subscription ID |  |
+| **pageNumber** | **int?** | Page Number | [optional]  |
+| **pageSize** | **int?** | The maximum number of devices to return in the response. If this value is zero, the service will select a default size.  | [optional]  |
+| **fieldMask** | **string** | The fields of the Device resource to be returned to the response. The fields id and numId are always returned, along with any other fields specified. A comma-separated list of fully qualified names of fields. Example:  | [optional]  |
+| **sortByClientOnline** | **bool?** | Set to true to return devices sorted by last heartbeat  | [optional]  |
+| **deviceIds** | [**List&lt;string&gt;**](string.md) | A list of device string IDs. For example, [&#39;device0&#39;, &#39;device12&#39;]. If empty, this field is ignored. Maximum IDs: 10,000 | [optional]  |
+| **deviceNumIds** | [**List&lt;string&gt;**](string.md) | A list of device numeric IDs. If empty, this field is ignored. Maximum IDs: 10,000. | [optional]  |
+| **gatewayListOptionsAssociationsDeviceId** | **string** | If set, returns only the gateways with which the specified device is associated. The device ID can be numeric (num_id) or the user-defined string (id). For example, if 456 is specified, returns only the gateways to which the device with num_id 456 is bound. | [optional]  |
+| **gatewayListOptionsAssociationsGatewayId** | **string** | If set, only devices associated with the specified gateway are returned. The gateway ID can be numeric (num_id) or the user-defined string (id). For example, if 123 is specified, only devices bound to the gateway with num_id 123 are returned | [optional]  |
+| **gatewayListOptionsGatewayType** | **string** | If GATEWAY is specified, only gateways are returned. If NON_GATEWAY is specified, only non-gateway devices are returned. If GATEWAY_TYPE_UNSPECIFIED is specified, all devices are returned. | [optional]  |
+
+### Return type
+
+[**ListDevicesOnlineResponse**](ListDevicesOnlineResponse.md)
 
 ### Authorization
 
